@@ -1,83 +1,154 @@
-+++
-title = "Clean up resources"
-date = 2022
-weight = 6
-chapter = false
-pre = "<b>6. </b>"
-+++
+---
+title : "Clean Up Resources"
+date: "2025-08-12"
+weight : 8
+chapter : false
+pre : " <b> 8. </b> "
+---
 
-We will take the following steps to delete the resources we created in this exercise.
+> **Goal**: Delete all AWS resources created during the tutorial to avoid unnecessary charges.
 
-#### Delete EC2 instance
+---
 
-1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
-   + Click **Instances**.
-   + Select both **Public Linux Instance** and **Private Windows Instance** instances.
-   + Click **Instance state**.
-   + Click **Terminate instance**, then click **Terminate** to confirm.
+## 1. Delete Endpoint on SageMaker
 
-2. Go to [IAM service management console](https://console.aws.amazon.com/iamv2/home#/home)
-   + Click **Roles**.
-   + In the search box, enter **SSM**.
-   + Click to select **SSM-Role**.
-   + Click **Delete**, then enter the role name **SSM-Role** and click **Delete** to delete the role.
+### Delete Endpoint
 
-![Clean](/images/6.clean/001-clean.png)
+- Open **AWS Console** → search for **Amazon SageMaker**.
+- In the left menu, choose **Inference → Endpoints**.
 
-3. Click **Users**.
-   + Click on user **Portfwd**.
-   + Click **Delete**, then enter the user name **Portfwd** and click **Delete** to delete the user.
+    ![Delete Endpoint](/images/8.clean/clean-1.png)
 
-#### Delete S3 bucket
+    *Image 1: Go to Endpoint page.*
 
-1. Access [System Manager - Session Manager service management console](https://console.aws.amazon.com/systems-manager/session-manager).
-   + Click the **Preferences** tab.
-   + Click **Edit**.
-   + Scroll down.
-   + In the section **S3 logging**.
-   + Uncheck **Enable** to disable logging.
-   + Scroll down.
-   + Click **Save**.
+- Select your endpoint (e.g., `dogcat-endpoint-xxxxxxxx`) and click **Delete**.
+- Confirm the deletion.
 
-2. Go to [S3 service management console](https://s3.console.aws.amazon.com/s3/home)
-   + Click on the S3 bucket we created for this lab. (Example: lab-fcj-bucket-0001 )
-   + Click **Empty**.
-   + Enter **permanently delete**, then click **Empty** to proceed to delete the object in the bucket.
-   + Click **Exit**.
+    ![Delete Endpoint](/images/8.clean/clean-2.png)
 
-3. After deleting all objects in the bucket, click **Delete**
+    *Image 2: Delete Endpoint.*
 
-![Clean](/images/6.clean/002-clean.png)
+### Delete Endpoint Configurations
 
-4. Enter the name of the S3 bucket, then click **Delete bucket** to proceed with deleting the S3 bucket.
+- In the left menu, choose **Inference → Endpoints configurations**.
 
-![Clean](/images/6.clean/003-clean.png)
+    ![Delete Endpoint Conf](/images/8.clean/clean-3.png)
 
-#### Delete VPC Endpoints
+    *Image 3: Go to Endpoint Configurations page.*
 
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-   + Click **Endpoints**.
-   + Select the 4 endpoints we created for the lab including **SSM**, **SSMMESSAGES**, **EC2MESSAGES**, **S3GW**.
-   + Click **Actions**.
-   + Click **Delete VPC endpoints**.
+- Select your endpoint configuration (e.g., `dogcat-endpoint-xxxxxxxx`) and click **Delete**.
+- Confirm the deletion.
 
-![Clean](/images/6.clean/004-clean.png)
+    ![Delete Endpoint Conf](/images/8.clean/clean-4.png)
 
-2. In the confirm box, enter **delete**.
-   + Click **Delete** to proceed with deleting endpoints.
+    *Image 4: Delete Endpoint Configurations.*
 
-3. Click the refresh icon, check that all endpoints have been deleted before proceeding to the next step.
+### Delete Model
 
-![Clean](/images/6.clean/005-clean.png)
+- Still in **SageMaker**, choose **Inference → Models**.
+- Select the model, click **Action** → **Delete**.
 
-#### Delete VPC
+    ![Delete Model](/images/8.clean/clean-4.1.png)
 
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-   + Click **Your VPCs**.
-   + Click on **Lab VPC**.
-   + Click **Actions**.
-   + Click **Delete VPC**.
+    *Image 4.1: Go to Model page.*
 
-2. In the confirm box, enter **delete** to confirm, click **Delete** to delete **Lab VPC** and related resources.
+- Click **Delete** to confirm.
 
-![Clean](/images/6.clean/006-clean.png)
+    ![Delete Model](/images/8.clean/clean-4.2.png)
+
+    *Image 4.2: Delete Model.*
+
+---
+
+## 2. Delete Lambda Functions
+
+- Open **AWS Console** → search for **Lambda**.
+- Select the 2 functions you created, `InvokeModelLambda` and `SaveHistoryLambda`, then choose **Action** → **Delete**.
+
+    ![Delete Lambda](/images/8.clean/clean-5.png)
+
+    *Image 5: Go to Lambda page.*
+
+- Type `confirm` in the input box, then click **Delete**.
+
+    ![Delete Lambda](/images/8.clean/clean-6.png)
+
+    *Image 6: Delete Lambda.*
+
+---
+
+## 3. Delete DynamoDB Table
+
+- Go to **DynamoDB** service.
+- In the left menu, select **Tables**, tick the table you created `PredictionHistory`, and choose **Delete**.
+
+    ![Delete DynamoDB](/images/8.clean/clean-7.png)
+
+    *Image 7: Go to DynamoDB Tables page.*
+
+- Type `confirm` and click **Delete**.
+
+    ![Delete DynamoDB](/images/8.clean/clean-8.png)
+
+    *Image 8: Delete PredictionHistory table.*
+
+---
+
+## 4. Delete API Gateway
+
+- Go to **API Gateway** service, choose **APIs** in the left menu.
+- Select the API Gateway you created `MLInferenceAPI` and click **Delete**.
+
+    ![Delete API Gateway](/images/8.clean/clean-9.png)
+
+    *Image 9: Go to API Gateway page.*
+
+- Type `confirm` and click **Delete**.
+
+    ![Delete API Gateway](/images/8.clean/clean-10.png)
+
+    *Image 10: Delete MLInferenceAPI.*
+
+---
+
+## 5. Delete IAM Roles (Optional but recommended)
+
+- Go to **IAM** service, under **Access Management**, choose **Roles**.
+- Search and select IAM roles like `InvokeModelLambda-role-xxx`, `SavePredictionHistory-role-xxx`, `AmazonSageMaker-ExecutionRole-xxx`.
+
+    ![Delete IAM Roles](/images/8.clean/clean-11.png)
+
+    *Image 11: Go to IAM page.*
+
+> Tip: Double-click **Last activity** to sort and find inactive roles quickly.
+
+- Type `delete` and click **Delete**.
+
+    ![Delete IAM Roles](/images/8.clean/clean-12.png)
+
+    *Image 12: Delete IAM Roles.*
+
+- **Note:** Make sure no other AWS services are still using these IAM roles.
+
+---
+
+## 6. Delete S3 Bucket
+
+- **S3 Buckets** are automatically created by SageMaker to store models.
+- Go to **S3**, select the bucket to delete → **Delete**.
+
+    ![Delete S3 Bucket](/images/8.clean/clean-13.png)
+
+    *Image 13: Go to S3 page.*
+
+- You will see the warning **This bucket is not empty**. Click **Empty bucket** to remove all objects.
+
+    ![Delete S3 Bucket](/images/8.clean/clean-14.png)
+
+    *Image 14: Empty bucket.*
+
+- Then type `permanently delete` and click **Empty** to completely delete the S3 bucket.
+
+---
+
+✅ **Done!** All AWS resources have been removed, preventing any unwanted charges.

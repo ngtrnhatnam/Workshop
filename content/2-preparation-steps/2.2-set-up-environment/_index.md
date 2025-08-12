@@ -1,7 +1,7 @@
 ---
 title : "Set Up Environment"
 date: "2025-08-10" 
-weight : 2 
+weight : 2.2
 chapter : false
 pre : " <b> 2.2 </b> "
 ---
@@ -12,13 +12,12 @@ pre : " <b> 2.2 </b> "
 
 ## 1. Fork and Clone the Project
 
-- Go to the GitHub repo:  
-  [https://github.com/yourusername/your-repo](https://github.com/yourusername/your-repo)
+- Go to the GitHub repo: [Serverless-ML-Inference-with-Lambda-and-SageMaker](https://github.com/ngtrnhatnam/Serverless-ML-Inference-with-Lambda-and-SageMaker)
 - Click **Fork** to create a copy under your own GitHub account.
 - Clone it to your machine:
 ```bash
-git clone https://github.com/<your-username>/Serverless-ML-Inference-with-Lambda-and-SageMaker.git
-cd <your-repo>
+git clone https://github.com/<your-username>/Serverless-ML-Inference-with-Lambda-and-SageMaker
+cd Serverless-ML-Inference-with-Lambda-and-SageMaker
 code .
 ```
 

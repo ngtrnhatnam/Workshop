@@ -1,7 +1,7 @@
 ---
-title : "Tạo Lambda Function lưu lịch sử"
+title : "Tạo API Gateway"
 date: "2025-08-12"
-weight : 5
+weight : 3
 chapter : false
 pre : " <b> 5.3 </b> "
 ---
@@ -113,3 +113,6 @@ pre : " <b> 5.3 </b> "
 ## Lời kết  
 
 Giờ thì API đã sẵn sàng đón nhận request từ frontend rồi đó bạn iu ơi!
+
+> **Xong rồi đúng hông?**  
+> Bay đến [Giao diện trang web](/6-web-interface) để chiến tiếp nào! 🚀✨

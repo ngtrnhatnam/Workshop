@@ -1,7 +1,7 @@
 ---
 title : "Set up SageMaker AI"
 date: "2025-08-11"
-weight : 3
+weight : 1
 chapter : false
 pre : " <b> 3.1 </b> "
 ---
@@ -47,4 +47,4 @@ pre : " <b> 3.1 </b> "
 ---
 
 > **Done?**  
-> Next, we’ll [Create IAM Role for SageMaker](/3-quick-create-sagemaker-AI/3.2-set-up-IAM-role-for-sagemaker/).
+> Next, we’ll [Upload trained model](/3-quick-create-sagemaker-AI/3.2-upload-trained-model/).

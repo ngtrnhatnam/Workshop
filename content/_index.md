@@ -1,154 +1,114 @@
----
-title : "Clean Up Resources"
-date: "2025-08-12"
-weight : 8
-chapter : false
-pre : " <b> 8 </b> "
----
+# 🏁Workshop: Deploying a Real-Time Image Recognition Serverless Application with Lambda and SageMaker  🚀
 
-> **Goal**: Delete all AWS resources created during the tutorial to avoid unnecessary charges.
+Welcome to **Workshop: Deploying a Real-Time Image Recognition Serverless Application with Lambda and SageMaker!**. This is a **6-hour** hands-on training program that helps you build a **serverless web application** for real-time image recognition using **Amazon Web Services (AWS)**. By leveraging services such as **S3, API Gateway, Lambda, DynamoDB,** and **SageMaker**, you will learn how to deploy a complete system — from static front-end to backend — with automated backup and performance monitoring.
 
----
+<p align="center">
+  <a href="https://ngtrnhatnam.github.io/" rel="dofollow" target="blank"><strong>Explore »</strong></a>
+    <br/>
+    <br/>
+    <a href="https://github.com/ngtrnhatnam/Workshop/blob/main/.github/PROPOSAL.md">💡Workshop Proposal</a>
+    &nbsp;|&nbsp;
+    <a href="https://github.com/ngtrnhatnam/Serverless-ML-Inference-with-Lambda-and-SageMaker">📂Source code</a>
+</p>
 
-## 1. Delete Endpoint on SageMaker
-
-### Delete Endpoint
-
-- Open **AWS Console** → search for **Amazon SageMaker**.
-- In the left menu, choose **Inference → Endpoints**.
-
-    ![Delete Endpoint](/images/8.clean/clean-1.png)
-
-    *Image 1: Go to Endpoint page.*
-
-- Select your endpoint (e.g., `dogcat-endpoint-xxxxxxxx`) and click **Delete**.
-- Confirm the deletion.
-
-    ![Delete Endpoint](/images/8.clean/clean-2.png)
-
-    *Image 2: Delete Endpoint.*
-
-### Delete Endpoint Configurations
-
-- In the left menu, choose **Inference → Endpoints configurations**.
-
-    ![Delete Endpoint Conf](/images/8.clean/clean-3.png)
-
-    *Image 3: Go to Endpoint Configurations page.*
-
-- Select your endpoint configuration (e.g., `dogcat-endpoint-xxxxxxxx`) and click **Delete**.
-- Confirm the deletion.
-
-    ![Delete Endpoint Conf](/images/8.clean/clean-4.png)
-
-    *Image 4: Delete Endpoint Configurations.*
-
-### Delete Model
-
-- Still in **SageMaker**, choose **Inference → Models**.
-- Select the model, click **Action** → **Delete**.
-
-    ![Delete Model](/images/8.clean/clean-4.1.png)
-
-    *Image 4.1: Go to Model page.*
-
-- Click **Delete** to confirm.
-
-    ![Delete Model](/images/8.clean/clean-4.2.png)
-
-    *Image 4.2: Delete Model.*
+<p>Sơ đồ kiến trúc tổng hợp: </p> 
+<p align="center">
+    <img loading="lazy" src="./images/Architecture_Diagram_Serverless_ML_Inference_with_AWS_Lambda_and_SageMaker.png" alt="Project">
+</p>
 
 ---
 
-## 2. Delete Lambda Functions
+### 🔰Introduction
 
-- Open **AWS Console** → search for **Lambda**.
-- Select the 2 functions you created, `InvokeModelLambda` and `SaveHistoryLambda`, then choose **Action** → **Delete**.
+🧠This workshop is designed to provide **practical skills** in **serverless architecture** and **cloud computing** for developers, IT students, and IT professionals. Through 8 practical sections, you will:
+- Build a basic web interface using **HTML and CSS**.
+- Integrate a serverless backend with **AWS Lambda, API Gateway**, and **DynamoDB**.
+- Upload a model to a **SageMaker Endpoint**.
 
-    ![Delete Lambda](/images/8.clean/clean-5.png)
+This workshop is suitable for educational institutions, training centers, and businesses looking to strengthen their cloud technology capabilities. Upon completion, you will have a **real-world project** to add to your portfolio and the skills to professionally deploy serverless applications. 
 
-    *Image 5: Go to Lambda page.*
+### Intern Information 👨‍🎓
 
-- Type `confirm` in the input box, then click **Delete**.
-
-    ![Delete Lambda](/images/8.clean/clean-6.png)
-
-    *Image 6: Delete Lambda.*
-
----
-
-## 3. Delete DynamoDB Table
-
-- Go to **DynamoDB** service.
-- In the left menu, select **Tables**, tick the table you created `PredictionHistory`, and choose **Delete**.
-
-    ![Delete DynamoDB](/images/8.clean/clean-7.png)
-
-    *Image 7: Go to DynamoDB Tables page.*
-
-- Type `confirm` and click **Delete**.
-
-    ![Delete DynamoDB](/images/8.clean/clean-8.png)
-
-    *Image 8: Delete PredictionHistory table.*
+- **📛Full Nam**: Nguyễn Trần Nhật Nam  
+- **🏫University**: Trường Đại Học Công nghệ Thành phố Hồ Chí Minh (HUTECH)  
+- **🆔Student ID**: 2180608712  
+- **📧Gmail**: [nhatnam.ngtr@gmail.com](mailto:nhatnam.ngtr@gmail.com)  
+- **💻GitHub**: [ngtrnhatnam](https://github.com/ngtrnhatnam)  
 
 ---
 
-## 4. Delete API Gateway
+### 🧩Main Content
 
-- Go to **API Gateway** service, choose **APIs** in the left menu.
-- Select the API Gateway you created `MLInferenceAPI` and click **Delete**.
+📦The workshop consists of **8 practical parts**, from serverless introduction to deployment and resource cleanup:
 
-    ![Delete API Gateway](/images/8.clean/clean-9.png)
+| 📚Part | 📌Title | 📝Description |
+|------|----------|-------|
+| 1 | **📖Introduction** | Overview of serverless, benefits, and system architecture. |
+| 2 | **⚙️Preparation Steps** | Set up AWS account, AWS CLI, and development environment. |
+| 3 | **🧠Quick Create SageMaker AI** | Create SageMaker and upload model to SageMaker Endpoint. |
+| 4 | **🎥Create DynamoDB Table** | Create DynamoDB to store prediction history. |
+| 5 | **🔗Lambda & API set up** | Create Lambda functions to handle logic and configure API Gateway integration. |
+| 6 | **🎨The Web Interface** | Design a simple interface with HTML and CSS. |
+| 7 | **🧪Check the Result** | Verify front-end, API, and backup functionality. |
+| 8 | **🧹Clean Up Resources** | 	Delete unused resources to avoid extra costs. |
 
-    *Image 9: Go to API Gateway page.*
-
-- Type `confirm` and click **Delete**.
-
-    ![Delete API Gateway](/images/8.clean/clean-10.png)
-
-    *Image 10: Delete MLInferenceAPI.*
-
----
-
-## 5. Delete IAM Roles (Optional but recommended)
-
-- Go to **IAM** service, under **Access Management**, choose **Roles**.
-- Search and select IAM roles like `InvokeModelLambda-role-xxx`, `SavePredictionHistory-role-xxx`, `AmazonSageMaker-ExecutionRole-xxx`.
-
-    ![Delete IAM Roles](/images/8.clean/clean-11.png)
-
-    *Image 11: Go to IAM page.*
-
-> Tip: Double-click **Last activity** to sort and find inactive roles quickly.
-
-- Type `delete` and click **Delete**.
-
-    ![Delete IAM Roles](/images/8.clean/clean-12.png)
-
-    *Image 12: Delete IAM Roles.*
-
-- **Note:** Make sure no other AWS services are still using these IAM roles.
+**🛠️Tools Used:**:
+- **🖥️AWS Management Console**, **AWS CLI**: Configure AWS services.
+- **💻Visual Studio Code**: Write Python, HTML/CSS/JS code.
 
 ---
 
-## 6. Delete S3 Bucket
+### 🚀Setup & Run Instructions
 
-- **S3 Buckets** are automatically created by SageMaker to store models.
-- Go to **S3**, select the bucket to delete → **Delete**.
+### 🔽1. Open your terminal and run
+- Open your terminal and run:
 
-    ![Delete S3 Bucket](/images/8.clean/clean-13.png)
+```bash
+git clone https://github.com/ngtrnhatnam/Serverless-ML-Inference-with-Lambda-and-SageMaker
+cd Serverless-ML-Inference-with-Lambda-and-SageMaker
+```
 
-    *Image 13: Go to S3 page.*
+### 🧰2. Cài Đặt Công Cụ
+- **AWS CLI**: Install from [https://aws.amazon.com/cli/](https://aws.amazon.com/cli/).
+- **Python**: Download from [https://www.python.org/](https://www.python.org/) to upload model.
+- **Visual Studio Code**: Download from [https://code.visualstudio.com/](https://code.visualstudio.com/).
 
-- You will see the warning **This bucket is not empty**. Click **Empty bucket** to remove all objects.
-
-    ![Delete S3 Bucket](/images/8.clean/clean-14.png)
-
-    *Image 14: Empty bucket.*
-
-- Then type `permanently delete` and click **Empty** to completely delete the S3 bucket.
+### 🧪3. Run & Test the Project
+- Open `main.html` locally in your browser to check the static interface.
+- Follow the workshop content for the full workflow.
 
 ---
 
-✅ **Done!** All AWS resources have been removed, preventing any unwanted charges.
+### 🧱System Requirements
+
+| ⚙️Requirement | 💡Description |
+|---------|-------|
+| **💻Operating System** | Windows, macOS, or Linux |
+| **☁️AWS Account** | AWS Free Tier account (recommended) |
+| **🔧Tools** | AWS CLI, Python (3.13+), Visual Studio Code |
+| **🌐Browser** | Chrome, Firefox, or Edge (JavaScript enabled) |
+| **📶Internet** | 	Stable connection to access AWS and GitHub |
+
+---
+
+### 📚References
+
+- [🔗The First Cloud Journey](https://cloudjourney.awsstudygroup.com/)
+- [🌟AWS Special Force Portal](https://specialforce.awsstudygroup.com/)
+- [🧠AWS Serverless Workshops](https://aws.amazon.com/serverless/)
+- [📖AWS Documentation](https://docs.aws.amazon.com/)
+
+---
+
+### 📬Contact
+
+For questions or support, feel free to reach out:
+- **📧Nguyễn Trần Nhật Nam**: [nhatnam.ngtr@gmail.com](mailto:nhatnam.ngtr@gmail.com)
+
+🌟 **Thank you for your interest in my workshop!** Join in to master serverless technology and build modern applications with AWS! 🚀
+
+---
+
+### 📄License
+
+This project is licensed under the terms of the [MIT](LICENSE) license.

@@ -3,7 +3,7 @@ title : "Preparation Steps"
 date: "2025-08-10" 
 weight : 2 
 chapter : false
-pre : " <b> 2.1 </b> "
+pre : " <b> 2. </b> "
 ---
 
 > **Goal**: Set up everything you need to deploy a **serverless image recognition app**, including your AWS account, IAM Roles, Lambda, API Gateway, DynamoDB table, and SageMaker.

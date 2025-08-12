@@ -1,7 +1,7 @@
 ---
 title : "Cài đặt công cụ cần thiết"
 date: "2025-08-10" 
-weight : 2 
+weight : 2.1
 chapter : false
 pre : " <b> 2.1 </b> "
 ---

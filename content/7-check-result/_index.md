@@ -3,7 +3,7 @@ title : "Check the Result"
 date: "2025-08-12"
 weight : 7
 chapter : false
-pre : " <b> 7 </b> "
+pre : " <b> 7. </b> "
 ---
 
 > **Goal**: Verify that the entire system (Web UI → API Gateway → Lambda → SageMaker → DynamoDB) works smoothly.

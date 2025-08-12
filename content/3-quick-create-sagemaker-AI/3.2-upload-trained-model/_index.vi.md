@@ -1,7 +1,7 @@
 ---
 title : "Upload mô hình đã huấn luyện"
 date: "2025-08-11"
-weight : 3
+weight : 2
 chapter : false
 pre : " <b> 3.2 </b> "
 ---
@@ -16,7 +16,7 @@ pre : " <b> 3.2 </b> "
   - `inference.py` (script inference)  
   - `mobilenetv3_small.pt` (file model đã huấn luyện)  
 
-    ![Model file](/images/3.quick-create-sagemaker-AI/set-up-sagemaker-AI-1.png)  
+    ![Model file](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-1.png)  
 
     *Hình 1: Hai file đã được cung cấp sẵn.*
 
@@ -27,7 +27,7 @@ pre : " <b> 3.2 </b> "
   cd ../..
   ```
 
-  ![After packing](/images/3.quick-create-sagemaker-AI/set-up-sagemaker-AI-2.png)  
+  ![After packing](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-2.png)  
 
     *Hình 2: Kết quả sau khi đóng gói xong và quay về thư mục gốc.*
 
@@ -37,19 +37,19 @@ pre : " <b> 3.2 </b> "
 
 - Vào AWS Console → IAM → Roles.  
 
-  ![AWS Search SageMaker](/images/3.quick-create-sagemaker-AI/set-up-sagemaker-AI-3.png)  
+  ![AWS Search SageMaker](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-3.png)  
 
   *Hình 3: Tìm kiếm và truy cập dịch vụ SageMaker trong AWS Console.*
 
 - Tìm role tự động sinh cho SageMaker có dạng: `AmazonSageMaker-ExecutionPolicy-xxxxxxx`.  
 
-  ![AWS Search SageMaker](/images/3.quick-create-sagemaker-AI/set-up-sagemaker-AI-4.png)  
+  ![AWS Search SageMaker](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-4.png)  
 
   *Hình 4: Tìm kiếm và truy cập dịch vụ SageMaker trong AWS Console.*
 
 - Copy ARN của role này.
 
-  ![AWS Search SageMaker](/images/3.quick-create-sagemaker-AI/set-up-sagemaker-AI-5.png)  
+  ![AWS Search SageMaker](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-5.png)  
 
   *Hình 5: Tìm kiếm và truy cập dịch vụ SageMaker trong AWS Console.*
 
@@ -60,13 +60,13 @@ pre : " <b> 3.2 </b> "
 - Mở file tại đường dẫn `src/sagemaker/deploy_model.py` trong dự án.  
 - Nhấn `Ctrl + F`, tìm `role =`.  
 
-  ![Find role location](/images/3.quick-create-sagemaker-AI/set-up-sagemaker-AI-6.png)  
+  ![Find role location](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-6.png)  
 
   *Hình 6: Tìm kiếm vị trí cần thay ARN.*
 
 - Thay giá trị role bên trong nháy đôi `""` bằng ARN đã copy.
 
-  ![Change ARN](/images/3.quick-create-sagemaker-AI/set-up-sagemaker-AI-6.png)  
+  ![Change ARN](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-7.png)  
 
   *Hình 7: Thay ARN đã được sao chép tại bước của hình thứ 5.*
 
@@ -84,7 +84,7 @@ pre : " <b> 3.2 </b> "
 
 - Script sẽ upload `model.tar.gz` lên S3 và triển khai Endpoint SageMaker. Sau khi hoàn tất sẽ được trả về thông tin Endpoint có dạng `dogcat-endpoint-xxxxx`, sao chép lại.
 
-  ![Finish upload](/images/3.quick-create-sagemaker-AI/set-up-sagemaker-AI-6.png)  
+  ![Finish upload](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-8.png)  
 
     *Hình 8: Đã upload thành công.*
 
@@ -95,13 +95,13 @@ pre : " <b> 3.2 </b> "
 - Mở file tại đường dẫn `src/lambda/lambda_function.py` trong dự án.  
 - Nhấn `Ctrl + F`, tìm `EndpointName=`.  
 
-  ![Find role location](/images/3.quick-create-sagemaker-AI/set-up-sagemaker-AI-6.png)  
+  ![Find role location](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-9.png)  
 
   *Hình 9: Tìm kiếm vị trí cần thay Endpoint.*
 
 - Thay giá trị role bên trong nháy đơn `' '` bằng Endpoint đã copy.
 
-  ![Change ARN](/images/3.quick-create-sagemaker-AI/set-up-sagemaker-AI-6.png)  
+  ![Change ARN](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-10.png)  
 
   *Hình 10: Thay Endpoint đã được sao chép tại bước của hình thứ 8.*
 
@@ -110,4 +110,4 @@ pre : " <b> 3.2 </b> "
 ---
 
 > **Xong chưa nè?**  
-> Tiếp theo bạn có thể chuyển sang phần [Cấu hình Lambda và API](/4-lambda-api-setup/) nha!
+> Tiếp theo bạn có thể chuyển sang phần [Tạo bảng DynamoDB](/4-create-dynamoDB/) nha!

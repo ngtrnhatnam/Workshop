@@ -1,7 +1,7 @@
 ---
 title : "Tạo Lambda Function gọi Sagemaker Endpoint"
 date: "2025-08-12"
-weight : 6
+weight : 2
 chapter : false
 pre : " <b> 5.2 </b> "
 ---

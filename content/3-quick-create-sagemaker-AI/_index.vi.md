@@ -3,7 +3,7 @@ title : "Tạo nhanh SageMaker AI"
 date: "2025-08-11" 
 weight : 3
 chapter : false
-pre : " <b> 3 </b> "
+pre : " <b> 3. </b> "
 ---
 
 > **Mục tiêu**: Tạo nhanh một mô hình AI trên AWS SageMaker, sẵn sàng để tích hợp vào ứng dụng serverless nhận diện hình ảnh của bạn.

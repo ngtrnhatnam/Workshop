@@ -1,83 +1,154 @@
-+++
-title = "Dọn dẹp tài nguyên  "
-date = 2021
-weight = 6
-chapter = false
-pre = "<b>6. </b>"
-+++
+---
+title : "Dọn Dẹp Tài Nguyên"
+date: "2025-08-12"
+weight : 8
+chapter : false
+pre : " <b> 8. </b> "
+---
 
-Chúng ta sẽ tiến hành các bước sau để xóa các tài nguyên chúng ta đã tạo trong bài thực hành này.
+> **Mục tiêu**: Xóa toàn bộ tài nguyên AWS đã tạo để tránh phát sinh chi phí ngoài ý muốn.
 
-#### Xóa EC2 instance
+---
 
-1. Truy cập [giao diện quản trị dịch vụ EC2](https://console.aws.amazon.com/ec2/v2/home)
-  + Click **Instances**.
-  + Click chọn cả 2 instance **Public Linux Instance** và **Private Windows Instance**. 
-  + Click **Instance state**.
-  + Click **Terminate instance**, sau đó click **Terminate** để xác nhận.
+## 1. Xóa endpoint trên SageMaker
 
-2. Truy cập [giao diện quản trị dịch vụ IAM](https://console.aws.amazon.com/iamv2/home#/home)
-  + Click **Roles**.
-  + Tại ô tìm kiếm , điền **SSM**.
-  + Click chọn **SSM-Role**.
-  + Click **Delete**, sau đó điền tên role **SSM-Role** và click **Delete** để xóa role.
-  
-![Clean](/images/6.clean/001-clean.png)
+### Xóa Endpoint
 
-3. Click **Users**.
-  + Click chọn user **Portfwd**.
-  + Click **Delete**, sau đó điền tên user **Portfwd** và click **Delete** để xóa user.
+- Mở **AWS Console** → tìm **Amazon SageMaker**.
+- Ở menu bên trái, chọn **Inference → Endpoints**.
 
-#### Xóa S3 bucket
+    ![Delete Endpoint](/images/8.clean/clean-1.png)
 
-1. Truy cập [giao diện quản trị dịch vụ System Manager - Session Manager](https://console.aws.amazon.com/systems-manager/session-manager).
-  + Click tab **Preferences**.
-  + Click **Edit**.
-  + Kéo chuột xuống dưới.
-  + Tại mục **S3 logging**.
-  + Bỏ chọn **Enable** để tắt tính năng logging.
-  + Kéo chuột xuống dưới.
-  + Click **Save**.
+    *Ảnh 1: Truy cập trang Endpoint.*
 
-2. Truy cập [giao diện quản trị dịch vụ S3](https://s3.console.aws.amazon.com/s3/home)
-  + Click chọn S3 bucket chúng ta đã tạo cho bài thực hành. ( Ví dụ : lab-fcj-bucket-0001 )
-  + Click **Empty**.
-  + Điền **permanently delete**, sau đó click **Empty** để tiến hành xóa object trong bucket.
-  + Click **Exit**.
+- Chọn endpoint của bạn (có dạng: `dogcat-endpoint-xxxxxxxx`) và nhấn vào **Delete**.
+- Nhấn xác nhận
 
-3. Sau khi xóa hết object trong bucket, click **Delete**
+    ![Delete Endpoint](/images/8.clean/clean-2.png)
 
-![Clean](/images/6.clean/002-clean.png)
+    *Ảnh 2: Xóa Endpoint.*
 
-4. Điền tên S3 bucket, sau đó click **Delete bucket** để tiến hành xóa S3 bucket.
+### Xóa Endpoint Configurations
 
-![Clean](/images/6.clean/003-clean.png)
+- Tiếp tục ở menu bên trái, chọn **Inference → Endpoints configurations**.
 
-#### Xóa các VPC Endpoint
+    ![Delete Endpoint Conf](/images/8.clean/clean-3.png)
 
-1. Truy cập vào [giao diện quản trị dịch vụ VPC](https://console.aws.amazon.com/vpc/home)
-  + Click **Endpoints**.
-  + Chọn 4 endpoints chúng ta đã tạo cho bài thực hành bao gồm **SSM**, **SSMMESSAGES**, **EC2MESSAGES**, **S3GW**.
-  + Click **Actions**.
-  + Click **Delete VPC endpoints**.
+    *Ảnh 3: Truy cập trang Endpoint Configurations.*
 
-![Clean](/images/6.clean/004-clean.png)
+- Chọn endpoint configurations của bạn (có dạng: `dogcat-endpoint-xxxxxxxx`) và nhấn vào **Delete**.
+- Nhấn xác nhận
 
-2. Tại ô confirm , điền **delete**.
-  + Click **Delete** để tiến hành xóa các endpoints.
+    ![Delete Endpoint Conf](/images/8.clean/clean-4.png)
 
-3. Click biểu tượng refresh, kiểm tra tất cả các endpoints đã bị xóa trước khi làm bước tiếp theo.
+    *Ảnh 4: Xóa Endpoint Configurations.*
 
-![Clean](/images/6.clean/005-clean.png)
+### Xóa Model
 
-#### Xóa VPC
+- Vẫn trong **SageMaker**, chọn **Inference → Models**.
+- Chọn model cần xóa, chọn **Action** → **Delete** 
 
-1. Truy cập vào [giao diện quản trị dịch vụ VPC](https://console.aws.amazon.com/vpc/home)
-  + Click **Your VPCs**.
-  + Click chọn **Lab VPC**.
-  + Click **Actions**.
-  + Click **Delete VPC**.
+    ![Delete Model](/images/8.clean/clean-4.1.png)
 
-2. Tại ô confirm, điền **delete** để xác nhận, click **Delete** để thực hiện xóa **Lab VPC** và các tài nguyên liên quan.
+    *Ảnh 4.1: Truy cập trang Model.*
 
-![Clean](/images/6.clean/006-clean.png)
+- Nhấn **Delete** để xác nhận xóa
+
+    ![Delete Model](/images/8.clean/clean-4.2.png)
+
+    *Ảnh 4.2: Xóa Model.*
+
+---
+
+## 2. Xóa dịch vụ Lambda
+
+- Mở **AWS Console** → tìm **Lambda**.
+- Chọn 2 function đã tạo, bao gồm `InvokeModelLambda`, `SaveHistoryLambda`, chọn **Action** →  **Delete**.
+
+    ![Delete Lambda](/images/8.clean/clean-5.png)
+
+    *Ảnh 5: Truy cập trang Lambda.*
+
+- Gõ `confirm` vào ô, sau đó chọn Delete.
+
+    ![Delete Lambda](/images/8.clean/clean-6.png)
+
+    *Ảnh 6: Xóa Lambda.*
+
+---
+
+## 3. Xóa bảng DynamoDB
+
+- Đi đến dịch vụ **DynamoDB**.
+- Chọn **Tables** bên tay trái, tick vào bảng đã tạo cần xóa `PredictionHistory`, chọn **Delete**
+
+    ![Delete Lambda](/images/8.clean/clean-7.png)
+
+    *Ảnh 7: Truy cập trang DynamoDB Tables.*
+
+-  Gõ xác nhận `confirm` và chọn **delete**. 
+
+    ![Delete Lambda](/images/8.clean/clean-8.png)
+
+    *Ảnh 8: Xóa bảng PredictionHistory.*
+
+---
+
+## 4. Xóa API Gateway
+
+- Đi đến dịch vụ **API Gateway**, chọn **APIs** bên tay trái.
+- Chọn API Gateway đã tạo `MLInferenceAPI` và chọn **Delete**.
+
+    ![Delete API Gateway](/images/8.clean/clean-9.png)
+
+    *Ảnh 9: Truy cập trang API Gateway.*
+
+-  Gõ xác nhận `confirm` và chọn **delete**. 
+
+    ![Delete API Gateway](/images/8.clean/clean-10.png)
+
+    *Ảnh 10: Xóa API MLInferenceAPI.*
+
+---
+
+## 5. Xóa IAM Roles (Không ưu tiên nhưng vẫn nên xóa)
+
+- Đi đến dịch vụ **IAM**, tại **Access Management**, chọn **Roles**
+- Tìm và click các IAM roles như `InvokeModelLambda-role-xxx`, `SavePredictionHistory-role-xxx`, `AmazonSageMaker-ExecutionRole-xxx`.
+
+    ![Delete IAM Roles](/images/8.clean/clean-11.png)
+
+    *Ảnh 11: Truy cập trang IAM.*
+
+> Tips: Click 2 lần vào **Last activity** sẽ cực kỳ dễ tìm.
+
+-  Gõ xác nhận `delete` và chọn **delete**. 
+
+    ![Delete API Gateway](/images/8.clean/clean-12.png)
+
+    *Ảnh 12: Xóa API MLInferenceAPI.*
+
+- **Chú ý:** Hãy chắc chắn rằng không còn dịch vụ nào còn được sử dụng gắn với các IAM role này.
+
+---
+
+## 6. Xóa S3 Bucket
+
+- **S3 Bucket** được Sagemaker tự động tạo để lưu model.
+- Truy cập trang **S3**, chọn bucket cần xóa → **Delete**
+
+    ![Delete S3 Bucket](/images/8.clean/clean-13.png)
+
+    *Ảnh 13: Truy cập trang S3.*
+
+- Lúc này sẽ có 1 dòng cảnh báo **This bucket is not empty**, các bạn chọn **Empty bucket** để tự động dọn bucket.
+
+    ![Delete S3 Bucket](/images/8.clean/clean-14.png)
+
+    *Ảnh 14: Dọn sạch bucket.*
+
+- Sau đó các bạn gõ xác nhận `permanently delete`, sau đó nhấn **Empty** để hoàn tất xóa S3 bucket.
+
+--
+
+> ✅ **Xong nè!** Giờ bạn đã dọn sạch tài nguyên để tránh phát sinh chi phí không cần thiết rồi đó.

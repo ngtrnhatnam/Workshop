@@ -1,91 +1,52 @@
 ---
-title : "Port Forwarding"
-date: "2025-06-07" 
-weight : 5 
+title : "Introduction to Lambda and API Gateway"
+date: "2025-08-12"
+weight : 5
 chapter : false
 pre : " <b> 5. </b> "
 ---
 
-{{% notice info %}}
-**Port Forwarding** is a useful way to redirect network traffic from one IP address - Port to another IP address - Port. With **Port Forwarding** we can access an EC2 instance located in the private subnet from our workstation.
-{{% /notice %}}
+> **Objective**: Understand the role of AWS Lambda and API Gateway in the serverless image recognition application.
 
-We will configure **Port Forwarding** for the RDP connection between our machine and **Private Windows Instance** located in the private subnet we created for this exercise.
+---
 
-![port-fwd](/images/arc-04.png) 
+## What is AWS Lambda?
 
-#### Create IAM user with permission to connect SSM
+AWS Lambda is AWS’s serverless compute service that lets you run code without managing servers. Lambda automatically scales and charges you only for the compute time you consume.
 
-1. Go to [IAM service management console](https://console.aws.amazon.com/iamv2/home)
-   + Click **Users** , then click **Add users**.
+Lambda’s role in this workshop:
+- Handle user requests (image upload, prediction calls).
+- Store prediction history into DynamoDB.
+- Call the Machine Learning model on SageMaker to return prediction results.
 
-![FWD](/images/5.fwd/001-fwd.png)
+---
 
-2. At the **Add user** page.
-   + In the **User name** field, enter **Portfwd**.
-   + Click on **Access key - Programmatic access**.
-   + Click **Next: Permissions**.
-  
-![FWD](/images/5.fwd/002-fwd.png)
+## What is API Gateway?
 
-3. Click **Attach existing policies directly**.
-   + In the search box, enter **ssm**.
-   + Click on **AmazonSSMFullAccess**.
-   + Click **Next: Tags**, click **Next: Reviews**.
-   + Click **Create user**.
+API Gateway is AWS’s API management service that helps you create, secure, monitor, and operate RESTful or WebSocket APIs.
 
-4. Save **Access key ID** and **Secret access key** information to perform AWS CLI configuration.
+Its role in the workshop:
+- Provide a RESTful endpoint for the frontend to send images and receive prediction results.
+- Connect to Lambda functions that handle backend logic.
+- Manage security and access permissions for the API.
 
-#### Install and Configure AWS CLI and Session Manager Plugin
-  
-To perform this hands-on, make sure your workstation has [AWS CLI]() and [Session Manager Plugin](https://docs.aws.amazon.com/systems-manager/latest/userguide/session) installed -manager-working-with-install-plugin.html)
+---
 
-More hands-on tutorials on installing and configuring the AWS CLI can be found [here](https://000011.awsstudygroup.com/).
+## Overall Architecture
 
-{{%notice tip%}}
-With Windows, when extracting the **Session Manager Plugin** installation folder, run the **install.bat** file with Administrator permission to perform the installation.
-{{%/notice%}}
+Frontend → API Gateway → Lambda (gọi SageMaker) → SageMaker Endpoint → Lambda (lưu lịch sử) → DynamoDB
 
-#### Implement Portforwarding
+---
 
-1. Run the command below in **Command Prompt** on your machine to configure **Port Forwarding**.
+## Main Steps  
 
-```
-   aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region (your region)
-```
-{{%notice tip%}}
+| **Step** | **Description** |
+|----------|--------------|
+| 5.1 | [Create Lambda Function to save history](/5-lambda-api-setup/5.1-create-lambda-save-history/) |
+| 5.2 | [Create Lambda Function to call SageMaker endpoint](/5-lambda-api-setup/5.2-create-lambda-call-sagemaker/) |
+| 5.3 | [Create API Gateways](/5-lambda-api-setup/5.3-create-api-gateway/) |
 
-**Windows Private Instance** **Instance ID** information can be found when you view the EC2 Windows Private Instance server details.
+---
 
-{{%/notice%}}
-
-   + Example command:
-
-```
-C:\Windows\system32>aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber="3389",localPortNumber="9999" --region ap-southeast-1
-```
-
-{{%notice warning%}}
-
-If your command gives an error like below: \
-SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found\
-Prove that you have not successfully installed the Session Manager Plugin. You may need to relaunch **Command Prompt** after installing **Session Manager Plugin**.
-
-{{%/notice%}}
-
-2. Connect to the **Private Windows Instance** you created using the **Remote Desktop** tool on your workstation.
-   + In the Computer section: enter **localhost:9999**.
-
-
-![FWD](/images/5.fwd/003-fwd.png)
-
-
-3. Return to the administration interface of the System Manager - Session Manager service.
-   + Click tab **Session history**.
-   + We will see session logs with Document name **AWS-StartPortForwardingSession**.
-
-
-![FWD](/images/5.fwd/004-fwd.png)
-
-
-Congratulations on completing the lab on how to use Session Manager to connect and store session logs in S3 bucket. Remember to perform resource cleanup to avoid unintended costs.
+> **Ready?**  
+> Next, we’ll create the Lambda function to save history in [Create Lambda Function to save history](/5-lambda-api-setup/5.1-create-lambda-save-history/)!

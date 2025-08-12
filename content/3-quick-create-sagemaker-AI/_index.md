@@ -3,7 +3,7 @@ title : "Quick Create SageMaker AI"
 date: "2025-08-11" 
 weight : 3
 chapter : false
-pre : " <b> 3 </b> "
+pre : " <b> 3. </b> "
 ---
 
 > **Goal**: Quickly set up an AI model on AWS SageMaker, ready to integrate into your serverless image recognition application.

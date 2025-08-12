@@ -1,7 +1,7 @@
 ---
 title : "Create Lambda Function for History Saving"
 date: "2025-08-12"
-weight : 5
+weight : 1
 chapter : false
 pre : " <b> 5.1 </b> "
 ---
@@ -88,4 +88,4 @@ pre : " <b> 5.1 </b> "
 ---
 
 > **Pretty easy, right?**  
-> If you’ve completed this step and feel ready, let’s move on to [Setting up the Lambda function to call the SageMaker Endpoint](/5-lambda-api-setup/5.2-create-lambda-call-sagemaker) nào!
+> If you’ve completed this step and feel ready, let’s move on to [Setting up the Lambda function to call the SageMaker Endpoint](/5-lambda-api-setup/5.2-create-lambda-call-sagemaker)!

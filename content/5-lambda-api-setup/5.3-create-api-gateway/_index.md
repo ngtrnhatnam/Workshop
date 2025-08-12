@@ -1,16 +1,16 @@
 ---
-title : "Tạo Lambda Function lưu lịch sử"
+title : "Create API Gateway"
 date: "2025-08-12"
-weight : 5
+weight : 3
 chapter : false
 pre : " <b> 5.3 </b> "
 ---
 
-> **Mục tiêu**: Create an API Gateway to interact with Lambda.
+> **Target**: Create an API Gateway to interact with Lambda.
 
 ---
 
-## 1. Tạo API Gateway mới
+## 1. Create API Gateway
 
 - Go to AWS Console → API Gateway.
 
@@ -74,4 +74,4 @@ pre : " <b> 5.3 </b> "
 Now your API is ready to receive requests from the frontend!
 
 > **Seem easy, right?**  
-> If you’re done, move on to [Create Lambda function to save history](/5-lambda-api-setup/5.2-create-lambda-save-history) and continue your serverless journey! 🚀✨
+> If you’re done, move on to [Web interface](/6-web-interface) and continue your serverless journey! 🚀✨

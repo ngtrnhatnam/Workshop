@@ -3,7 +3,7 @@ title : "Các bước chuẩn bị"
 date: "2025-08-10" 
 weight : 2 
 chapter : false
-pre : " <b> 2.1 </b> "
+pre : " <b> 2. </b> "
 ---
 
 > **Mục tiêu**: Thiết lập môi trường cần thiết để triển khai **ứng dụng nhận diện hình ảnh serverless**, bao gồm tài khoản AWS, các IAM Role, Lambda, API Gateway, bảng DynamoDB, và Sagemaker.

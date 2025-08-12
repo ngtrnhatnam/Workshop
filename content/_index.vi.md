@@ -1,154 +1,114 @@
----
-title : "Dọn Dẹp Tài Nguyên"
-date: "2025-08-12"
-weight : 8
-chapter : false
-pre : " <b> 8 </b> "
----
+# 🏁Workshop: Triển khai Ứng Dụng Nhận Diện Hình Ảnh Thời Gian Thực Serverless với Lambda và SageMaker 🚀
 
-> **Mục tiêu**: Xóa toàn bộ tài nguyên AWS đã tạo để tránh phát sinh chi phí ngoài ý muốn.
+Chào mừng bạn đến với **Workshop: Triển khai Ứng Dụng Nhận Diện Hình Ảnh Thời Gian Thực Serverless với Lambda và SageMaker**! Đây là một chương trình đào tạo thực hành kéo dài **6 giờ**, giúp bạn xây dựng một **ứng dụng web serverless** nhận diện ảnh thời gian thực sử dụng **Amazon Web Services (AWS)**. Sử dụng các dịch vụ như **S3**, **API Gateway**, **Lambda**, **DynamoDB**, và **SageMaker**, bạn sẽ học cách triển khai một hệ thống hoàn chỉnh từ giao diện tĩnh đến backend, tích hợp sao lưu tự động và giám sát hiệu suất.
 
----
+<p align="center">
+  <a href="https://ngtrnhatnam.github.io/" rel="dofollow" target="blank"><strong>Explore »</strong></a>
+    <br/>
+    <br/>
+    <a href="https://github.com/ngtrnhatnam/Workshop/blob/main/.github/PROPOSAL.md">💡Workshop Proposal</a>
+    &nbsp;|&nbsp;
+    <a href="https://github.com/ngtrnhatnam/Serverless-ML-Inference-with-Lambda-and-SageMaker">📂Source code</a>
+</p>
 
-## 1. Xóa endpoint trên SageMaker
-
-### Xóa Endpoint
-
-- Mở **AWS Console** → tìm **Amazon SageMaker**.
-- Ở menu bên trái, chọn **Inference → Endpoints**.
-
-    ![Delete Endpoint](/images/8.clean/clean-1.png)
-
-    *Ảnh 1: Truy cập trang Endpoint.*
-
-- Chọn endpoint của bạn (có dạng: `dogcat-endpoint-xxxxxxxx`) và nhấn vào **Delete**.
-- Nhấn xác nhận
-
-    ![Delete Endpoint](/images/8.clean/clean-2.png)
-
-    *Ảnh 2: Xóa Endpoint.*
-
-### Xóa Endpoint Configurations
-
-- Tiếp tục ở menu bên trái, chọn **Inference → Endpoints configurations**.
-
-    ![Delete Endpoint Conf](/images/8.clean/clean-3.png)
-
-    *Ảnh 3: Truy cập trang Endpoint Configurations.*
-
-- Chọn endpoint configurations của bạn (có dạng: `dogcat-endpoint-xxxxxxxx`) và nhấn vào **Delete**.
-- Nhấn xác nhận
-
-    ![Delete Endpoint Conf](/images/8.clean/clean-4.png)
-
-    *Ảnh 4: Xóa Endpoint Configurations.*
-
-### Xóa Model
-
-- Vẫn trong **SageMaker**, chọn **Inference → Models**.
-- Chọn model cần xóa, chọn **Action** → **Delete** 
-
-    ![Delete Model](/images/8.clean/clean-4.1.png)
-
-    *Ảnh 4.1: Truy cập trang Model.*
-
-- Nhấn **Delete** để xác nhận xóa
-
-    ![Delete Model](/images/8.clean/clean-4.2.png)
-
-    *Ảnh 4.2: Xóa Model.*
+<p>Sơ đồ kiến trúc tổng hợp: </p> 
+<p align="center">
+    <img loading="lazy" src="./images/Architecture_Diagram_Serverless_ML_Inference_with_AWS_Lambda_and_SageMaker.png" alt="Project">
+</p>
 
 ---
 
-## 2. Xóa dịch vụ Lambda
+### 🔰Giới Thiệu
 
-- Mở **AWS Console** → tìm **Lambda**.
-- Chọn 2 function đã tạo, bao gồm `InvokeModelLambda`, `SaveHistoryLambda`, chọn **Action** →  **Delete**.
+🧠Workshop này được thiết kế để trang bị kỹ năng thực tiễn về **kiến trúc serverless** và **điện toán đám mây** cho lập trình viên, sinh viên CNTT, và chuyên gia IT. Qua **8 phần thực hành**, bạn sẽ:
+- Xây dựng giao diện web cơ bản với **HTML, CSS**.
+- Tích hợp backend serverless với **AWS Lambda**, **API Gateway**, và **DynamoDB**.
+- Tải model lên **SageMaker Endpoint**.
 
-    ![Delete Lambda](/images/8.clean/clean-5.png)
+Workshop phù hợp cho các tổ chức giáo dục, trung tâm đào tạo, và doanh nghiệp muốn nâng cao năng lực công nghệ đám mây. Sau khi hoàn thành, bạn sẽ có một **dự án thực tế** để bổ sung vào portfolio và kỹ năng triển khai ứng dụng serverless chuyên nghiệp.
 
-    *Ảnh 5: Truy cập trang Lambda.*
+### Thông Tin Sinh Viên Thực Tập 👨‍🎓
 
-- Gõ `confirm` vào ô, sau đó chọn Delete.
-
-    ![Delete Lambda](/images/8.clean/clean-6.png)
-
-    *Ảnh 6: Xóa Lambda.*
-
----
-
-## 3. Xóa bảng DynamoDB
-
-- Đi đến dịch vụ **DynamoDB**.
-- Chọn **Tables** bên tay trái, tick vào bảng đã tạo cần xóa `PredictionHistory`, chọn **Delete**
-
-    ![Delete Lambda](/images/8.clean/clean-7.png)
-
-    *Ảnh 7: Truy cập trang DynamoDB Tables.*
-
--  Gõ xác nhận `confirm` và chọn **delete**. 
-
-    ![Delete Lambda](/images/8.clean/clean-8.png)
-
-    *Ảnh 8: Xóa bảng PredictionHistory.*
+- **📛Họ và Tên**: Nguyễn Trần Nhật Nam  
+- **🏫Trường**: Trường Đại Học Công nghệ Thành phố Hồ Chí Minh (HUTECH)  
+- **🆔MSSV**: 2180608712  
+- **📧Gmail**: [nhatnam.ngtr@gmail.com](mailto:nhatnam.ngtr@gmail.com)  
+- **💻GitHub**: [ngtrnhatnam](https://github.com/ngtrnhatnam)  
 
 ---
 
-## 4. Xóa API Gateway
+### 🧩Nội Dung Chính
 
-- Đi đến dịch vụ **API Gateway**, chọn **APIs** bên tay trái.
-- Chọn API Gateway đã tạo `MLInferenceAPI` và chọn **Delete**.
+📦Workshop bao gồm **8 phần thực hành**, từ giới thiệu serverless đến triển khai và dọn dẹp tài nguyên:
 
-    ![Delete API Gateway](/images/8.clean/clean-9.png)
+| 📚Phần | 📌Nội Dung | 📝Mô Tả |
+|------|----------|-------|
+| 1 | **📖Giới Thiệu** | Tổng quan serverless, lợi ích, và kiến trúc hệ thống. |
+| 2 | **⚙️Chuẩn Bị** | Thiết lập tài khoản AWS, AWS CLI, và môi trường phát triển. |
+| 3 | **🧠Triển khai nhanh SageMaker AI** | Tạo SageMaker để upload model lên SageMaker Endpoint. |
+| 4 | **🎥Tạo DynamoDB** | Tạo DynamoDB để lưu lịch sử ảnh đã dự đoán |
+| 5 | **🔗Cấu Hình Lambda và API** | Tạo Lambda functions để xử lý logic và cấu hình API tích hợp Lambda. |
+| 6 | **🎨Giao Diện Web** | Thiết kế giao diện đơn giản với HTML và CSS. |
+| 7 | **🧪Kiểm Tra Kết Quả** | Xác minh hoạt động của giao diện, API, và sao lưu. |
+| 8 | **🧹Dọn Dẹp Tài Nguyên** | Xóa tài nguyên để tránh chi phí dư thừa. |
 
-    *Ảnh 9: Truy cập trang API Gateway.*
-
--  Gõ xác nhận `confirm` và chọn **delete**. 
-
-    ![Delete API Gateway](/images/8.clean/clean-10.png)
-
-    *Ảnh 10: Xóa API MLInferenceAPI.*
-
----
-
-## 5. Xóa IAM Roles (Không ưu tiên nhưng vẫn nên xóa)
-
-- Đi đến dịch vụ **IAM**, tại **Access Management**, chọn **Roles**
-- Tìm và click các IAM roles như `InvokeModelLambda-role-xxx`, `SavePredictionHistory-role-xxx`, `AmazonSageMaker-ExecutionRole-xxx`.
-
-    ![Delete IAM Roles](/images/8.clean/clean-11.png)
-
-    *Ảnh 11: Truy cập trang IAM.*
-
-> Tips: Click 2 lần vào **Last activity** sẽ cực kỳ dễ tìm.
-
--  Gõ xác nhận `delete` và chọn **delete**. 
-
-    ![Delete API Gateway](/images/8.clean/clean-12.png)
-
-    *Ảnh 12: Xóa API MLInferenceAPI.*
-
-- **Chú ý:** Hãy chắc chắn rằng không còn dịch vụ nào còn được sử dụng gắn với các IAM role này.
+**🛠️Công Cụ Sử Dụng**:
+- **🖥️AWS Management Console**, **AWS CLI**: Cấu hình dịch vụ AWS.
+- **💻Visual Studio Code**: Viết mã Python, HTML/CSS/JS.
 
 ---
 
-## 6. Xóa S3 Bucket
+### 🚀Hướng Dẫn Cài Đặt và Chạy Dự Án
 
-- **S3 Bucket** được Sagemaker tự động tạo để lưu model.
-- Truy cập trang **S3**, chọn bucket cần xóa → **Delete**
+### 🔽1. Clone Mã Nguồn từ GitHub
+- Mở terminal và chạy lệnh sau để sao chép mã nguồn về máy:
 
-    ![Delete S3 Bucket](/images/8.clean/clean-13.png)
+```bash
+git clone https://github.com/ngtrnhatnam/Serverless-ML-Inference-with-Lambda-and-SageMaker
+cd Serverless-ML-Inference-with-Lambda-and-SageMaker
+```
 
-    *Ảnh 13: Truy cập trang S3.*
+### 🧰2. Install Required Tools
+- **AWS CLI**: Cài đặt theo hướng dẫn tại [https://aws.amazon.com/cli/](https://aws.amazon.com/cli/).
+- **Python**: Tải và cài đặt từ [https://www.python.org/](https://www.python.org/) để upload model.
+- **Visual Studio Code**: Tải tại [https://code.visualstudio.com/](https://code.visualstudio.com/) để chỉnh sửa mã.
 
-- Lúc này sẽ có 1 dòng cảnh báo **This bucket is not empty**, các bạn chọn **Empty bucket** để tự động dọn bucket.
+### 🧪3. Chạy và Kiểm Tra Dự Án
+- Mở `main.html` cục bộ trong trình duyệt để kiểm tra giao diện tĩnh.
+- Xem chi tiết content để hiểu toàn bộ quy trình.
 
-    ![Delete S3 Bucket](/images/8.clean/clean-14.png)
+---
 
-    *Ảnh 14: Dọn sạch bucket.*
+### 🧱Yêu Cầu Hệ Thống
 
-- Sau đó các bạn gõ xác nhận `permanently delete`, sau đó nhấn **Empty** để hoàn tất xóa S3 bucket.
+| ⚙️Yêu Cầu | 💡Mô Tả |
+|---------|-------|
+| **💻Hệ Điều Hành** | Windows, macOS, hoặc Linux |
+| **☁️AWS Account** | Tài khoản AWS Free Tier (khuyến nghị) |
+| **🔧Công Cụ** | AWS CLI, Python (3.13+), Visual Studio Code |
+| **🌐Trình Duyệt** | Chrome, Firefox, hoặc Edge (hỗ trợ JavaScript) |
+| **📶Kết Nối** | Internet ổn định để truy cập AWS và GitHub |
 
---
+---
 
-> ✅ **Xong nè!** Giờ bạn đã dọn sạch tài nguyên để tránh phát sinh chi phí không cần thiết rồi đó.
+### 📚Tài Liệu Tham Khảo 
+
+- [🔗The First Cloud Journey](https://cloudjourney.awsstudygroup.com/)
+- [🌟AWS Special Force Portal](https://specialforce.awsstudygroup.com/)
+- [🧠AWS Serverless Workshops](https://aws.amazon.com/serverless/)
+- [📖AWS Documentation](https://docs.aws.amazon.com/)
+
+---
+
+### 📬Liên Hệ
+
+Có thắc mắc hoặc cần hỗ trợ? Hãy liên hệ với tôi:
+- **📧Nguyễn Trần Nhật Nam**: [nhatnam.ngtr@gmail.com](mailto:nhatnam.ngtr@gmail.com)
+
+🌟 **Cảm ơn bạn đã quan tâm đến workshop của tôi!** Tham gia để làm chủ công nghệ serverless và xây dựng ứng dụng hiện đại với AWS! 🚀
+
+---
+
+### 📄License
+
+This project is licensed under the terms of the [MIT](LICENSE) license.

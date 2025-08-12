@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.7">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Dọn Dẹp Tài Nguyên :: AWS System Manager</title>
+
+    
+    <link href="/css/nucleus.css?1754998999" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1754998999" rel="stylesheet">
+    <link href="/css/hybrid.css?1754998999" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1754998999" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1754998999" rel="stylesheet">
+    <link href="/css/auto-complete.css?1754998999" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1754998999" rel="stylesheet">
+    <link href="/css/theme.css?1754998999" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1754998999" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1754998999" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1754998999"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/vi/8-cleanup/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1754998999"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1754998999"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/\/vi";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1754998999"></script>
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-introduce/" title="Giới thiệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-introduce/">
+           <b> 1. </b> Giới thiệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-preparation-steps/" title="Các bước chuẩn bị" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-preparation-steps/">
+           <b> 2. </b> Các bước chuẩn bị
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-preparation-steps/2.1-install-necessary-tool/" title="Cài đặt công cụ cần thiết" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-preparation-steps/2.1-install-necessary-tool/">
+           <b> 2.1 </b> Cài đặt công cụ cần thiết
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-preparation-steps/2.2-set-up-environment/" title="Chuẩn bị môi trường" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-preparation-steps/2.2-set-up-environment/">
+           <b> 2.2 </b> Chuẩn bị môi trường
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-quick-create-sagemaker-ai/" title="Tạo nhanh SageMaker AI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-quick-create-sagemaker-ai/">
+           <b> 3. </b> Tạo nhanh SageMaker AI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-quick-create-sagemaker-ai/3.1-set-up-sagemaker-ai/" title="Thiết lập SageMaker AI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-quick-create-sagemaker-ai/3.1-set-up-sagemaker-ai/">
+           <b> 3.1 </b> Thiết lập SageMaker AI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-quick-create-sagemaker-ai/3.2-upload-trained-model/" title="Upload mô hình đã huấn luyện" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-quick-create-sagemaker-ai/3.2-upload-trained-model/">
+           <b> 3.2 </b> Upload mô hình đã huấn luyện
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-create-dynamodb/" title="Tạo DynamoDB Table: PredictionHistory" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-create-dynamodb/">
+           <b> 4. </b> Tạo DynamoDB Table: PredictionHistory
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-lambda-api-setup/" title="Giới thiệu Lambda và API Gateway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-lambda-api-setup/">
+           <b> 5. </b> Giới thiệu Lambda và API Gateway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-lambda-api-setup/5.1-create-lambda-save-history/" title="Tạo Lambda Function lưu lịch sử" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-lambda-api-setup/5.1-create-lambda-save-history/">
+           <b> 5.1 </b> Tạo Lambda Function lưu lịch sử
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-lambda-api-setup/5.2-create-lambda-call-sagemaker/" title="Tạo Lambda Function gọi Sagemaker Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-lambda-api-setup/5.2-create-lambda-call-sagemaker/">
+           <b> 5.2 </b> Tạo Lambda Function gọi Sagemaker Endpoint
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-lambda-api-setup/5.3-create-api-gateway/" title="Tạo API Gateway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-lambda-api-setup/5.3-create-api-gateway/">
+           <b> 5.3 </b> Tạo API Gateway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-web-interface/" title="Thiết kế Giao Diện Web" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-web-interface/">
+           <b> 6. </b> Thiết kế Giao Diện Web
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-check-result/" title="Kiểm Tra Kết Quả" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-check-result/">
+           <b> 7. </b> Kiểm Tra Kết Quả
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/8-cleanup/" title="Dọn Dẹp Tài Nguyên" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/vi/8-cleanup/">
+           <b> 8. </b> Dọn Dẹp Tài Nguyên
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/8-cleanup/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="//localhost:1313/vi/8-cleanup/" selected>Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Sử Trịnh  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/vi/'></a> > Dọn Dẹp Tài Nguyên
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-xóa-endpoint-trên-sagemaker">1. Xóa endpoint trên SageMaker</a>
+      <ul>
+        <li><a href="#xóa-endpoint">Xóa Endpoint</a></li>
+        <li><a href="#xóa-endpoint-configurations">Xóa Endpoint Configurations</a></li>
+        <li><a href="#xóa-model">Xóa Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-xóa-dịch-vụ-lambda">2. Xóa dịch vụ Lambda</a></li>
+    <li><a href="#3-xóa-bảng-dynamodb">3. Xóa bảng DynamoDB</a></li>
+    <li><a href="#4-xóa-api-gateway">4. Xóa API Gateway</a></li>
+    <li><a href="#5-xóa-iam-roles-không-ưu-tiên-nhưng-vẫn-nên-xóa">5. Xóa IAM Roles (Không ưu tiên nhưng vẫn nên xóa)</a></li>
+    <li><a href="#6-xóa-s3-bucket">6. Xóa S3 Bucket</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Dọn Dẹp Tài Nguyên
+            </h1>
+          
+
+        
+
+
+
+	<blockquote>
+<p><strong>Mục tiêu</strong>: Xóa toàn bộ tài nguyên AWS đã tạo để tránh phát sinh chi phí ngoài ý muốn.</p></blockquote>
+<hr>
+<h2 id="1-xóa-endpoint-trên-sagemaker">1. Xóa endpoint trên SageMaker</h2>
+<h3 id="xóa-endpoint">Xóa Endpoint</h3>
+<ul>
+<li>
+<p>Mở <strong>AWS Console</strong> → tìm <strong>Amazon SageMaker</strong>.</p>
+</li>
+<li>
+<p>Ở menu bên trái, chọn <strong>Inference → Endpoints</strong>.</p>
+<p><img src="/images/8.clean/clean-1.png" alt="Delete Endpoint"></p>
+<p><em>Ảnh 1: Truy cập trang Endpoint.</em></p>
+</li>
+<li>
+<p>Chọn endpoint của bạn (có dạng: <code>dogcat-endpoint-xxxxxxxx</code>) và nhấn vào <strong>Delete</strong>.</p>
+</li>
+<li>
+<p>Nhấn xác nhận</p>
+<p><img src="/images/8.clean/clean-2.png" alt="Delete Endpoint"></p>
+<p><em>Ảnh 2: Xóa Endpoint.</em></p>
+</li>
+</ul>
+<h3 id="xóa-endpoint-configurations">Xóa Endpoint Configurations</h3>
+<ul>
+<li>
+<p>Tiếp tục ở menu bên trái, chọn <strong>Inference → Endpoints configurations</strong>.</p>
+<p><img src="/images/8.clean/clean-3.png" alt="Delete Endpoint Conf"></p>
+<p><em>Ảnh 3: Truy cập trang Endpoint Configurations.</em></p>
+</li>
+<li>
+<p>Chọn endpoint configurations của bạn (có dạng: <code>dogcat-endpoint-xxxxxxxx</code>) và nhấn vào <strong>Delete</strong>.</p>
+</li>
+<li>
+<p>Nhấn xác nhận</p>
+<p><img src="/images/8.clean/clean-4.png" alt="Delete Endpoint Conf"></p>
+<p><em>Ảnh 4: Xóa Endpoint Configurations.</em></p>
+</li>
+</ul>
+<h3 id="xóa-model">Xóa Model</h3>
+<ul>
+<li>
+<p>Vẫn trong <strong>SageMaker</strong>, chọn <strong>Inference → Models</strong>.</p>
+</li>
+<li>
+<p>Chọn model cần xóa, chọn <strong>Action</strong> → <strong>Delete</strong></p>
+<p><img src="/images/8.clean/clean-4.1.png" alt="Delete Model"></p>
+<p><em>Ảnh 4.1: Truy cập trang Model.</em></p>
+</li>
+<li>
+<p>Nhấn <strong>Delete</strong> để xác nhận xóa</p>
+<p><img src="/images/8.clean/clean-4.2.png" alt="Delete Model"></p>
+<p><em>Ảnh 4.2: Xóa Model.</em></p>
+</li>
+</ul>
+<hr>
+<h2 id="2-xóa-dịch-vụ-lambda">2. Xóa dịch vụ Lambda</h2>
+<ul>
+<li>
+<p>Mở <strong>AWS Console</strong> → tìm <strong>Lambda</strong>.</p>
+</li>
+<li>
+<p>Chọn 2 function đã tạo, bao gồm <code>InvokeModelLambda</code>, <code>SaveHistoryLambda</code>, chọn <strong>Action</strong> →  <strong>Delete</strong>.</p>
+<p><img src="/images/8.clean/clean-5.png" alt="Delete Lambda"></p>
+<p><em>Ảnh 5: Truy cập trang Lambda.</em></p>
+</li>
+<li>
+<p>Gõ <code>confirm</code> vào ô, sau đó chọn Delete.</p>
+<p><img src="/images/8.clean/clean-6.png" alt="Delete Lambda"></p>
+<p><em>Ảnh 6: Xóa Lambda.</em></p>
+</li>
+</ul>
+<hr>
+<h2 id="3-xóa-bảng-dynamodb">3. Xóa bảng DynamoDB</h2>
+<ul>
+<li>
+<p>Đi đến dịch vụ <strong>DynamoDB</strong>.</p>
+</li>
+<li>
+<p>Chọn <strong>Tables</strong> bên tay trái, tick vào bảng đã tạo cần xóa <code>PredictionHistory</code>, chọn <strong>Delete</strong></p>
+<p><img src="/images/8.clean/clean-7.png" alt="Delete Lambda"></p>
+<p><em>Ảnh 7: Truy cập trang DynamoDB Tables.</em></p>
+</li>
+<li>
+<p>Gõ xác nhận <code>confirm</code> và chọn <strong>delete</strong>.</p>
+<p><img src="/images/8.clean/clean-8.png" alt="Delete Lambda"></p>
+<p><em>Ảnh 8: Xóa bảng PredictionHistory.</em></p>
+</li>
+</ul>
+<hr>
+<h2 id="4-xóa-api-gateway">4. Xóa API Gateway</h2>
+<ul>
+<li>
+<p>Đi đến dịch vụ <strong>API Gateway</strong>, chọn <strong>APIs</strong> bên tay trái.</p>
+</li>
+<li>
+<p>Chọn API Gateway đã tạo <code>MLInferenceAPI</code> và chọn <strong>Delete</strong>.</p>
+<p><img src="/images/8.clean/clean-9.png" alt="Delete API Gateway"></p>
+<p><em>Ảnh 9: Truy cập trang API Gateway.</em></p>
+</li>
+<li>
+<p>Gõ xác nhận <code>confirm</code> và chọn <strong>delete</strong>.</p>
+<p><img src="/images/8.clean/clean-10.png" alt="Delete API Gateway"></p>
+<p><em>Ảnh 10: Xóa API MLInferenceAPI.</em></p>
+</li>
+</ul>
+<hr>
+<h2 id="5-xóa-iam-roles-không-ưu-tiên-nhưng-vẫn-nên-xóa">5. Xóa IAM Roles (Không ưu tiên nhưng vẫn nên xóa)</h2>
+<ul>
+<li>
+<p>Đi đến dịch vụ <strong>IAM</strong>, tại <strong>Access Management</strong>, chọn <strong>Roles</strong></p>
+</li>
+<li>
+<p>Tìm và click các IAM roles như <code>InvokeModelLambda-role-xxx</code>, <code>SavePredictionHistory-role-xxx</code>, <code>AmazonSageMaker-ExecutionRole-xxx</code>.</p>
+<p><img src="/images/8.clean/clean-11.png" alt="Delete IAM Roles"></p>
+<p><em>Ảnh 11: Truy cập trang IAM.</em></p>
+</li>
+</ul>
+<blockquote>
+<p>Tips: Click 2 lần vào <strong>Last activity</strong> sẽ cực kỳ dễ tìm.</p></blockquote>
+<ul>
+<li>
+<p>Gõ xác nhận <code>delete</code> và chọn <strong>delete</strong>.</p>
+<p><img src="/images/8.clean/clean-12.png" alt="Delete API Gateway"></p>
+<p><em>Ảnh 12: Xóa API MLInferenceAPI.</em></p>
+</li>
+<li>
+<p><strong>Chú ý:</strong> Hãy chắc chắn rằng không còn dịch vụ nào còn được sử dụng gắn với các IAM role này.</p>
+</li>
+</ul>
+<hr>
+<h2 id="6-xóa-s3-bucket">6. Xóa S3 Bucket</h2>
+<ul>
+<li>
+<p><strong>S3 Bucket</strong> được Sagemaker tự động tạo để lưu model.</p>
+</li>
+<li>
+<p>Truy cập trang <strong>S3</strong>, chọn bucket cần xóa → <strong>Delete</strong></p>
+<p><img src="/images/8.clean/clean-13.png" alt="Delete S3 Bucket"></p>
+<p><em>Ảnh 13: Truy cập trang S3.</em></p>
+</li>
+<li>
+<p>Lúc này sẽ có 1 dòng cảnh báo <strong>This bucket is not empty</strong>, các bạn chọn <strong>Empty bucket</strong> để tự động dọn bucket.</p>
+<p><img src="/images/8.clean/clean-14.png" alt="Delete S3 Bucket"></p>
+<p><em>Ảnh 14: Dọn sạch bucket.</em></p>
+</li>
+<li>
+<p>Sau đó các bạn gõ xác nhận <code>permanently delete</code>, sau đó nhấn <strong>Empty</strong> để hoàn tất xóa S3 bucket.</p>
+</li>
+</ul>
+<p>&ndash;</p>
+<blockquote>
+<p>✅ <strong>Xong nè!</strong> Giờ bạn đã dọn sạch tài nguyên để tránh phát sinh chi phí không cần thiết rồi đó.</p></blockquote>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/vi/7-check-result/" title="Kiểm Tra Kết Quả"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/vi/1-introduce/" title="Giới thiệu" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1754998999"></script>
+    <script src="/js/perfect-scrollbar.min.js?1754998999"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1754998999"></script>
+    <script src="/js/jquery.sticky.js?1754998999"></script>
+    <script src="/js/featherlight.min.js?1754998999"></script>
+    <script src="/js/highlight.pack.js?1754998999"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1754998999"></script>
+    <script src="/js/learn.js?1754998999"></script>
+    <script src="/js/hugo-learn.js?1754998999"></script>
+
+    <link href="/mermaid/mermaid.css?1754998999" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1754998999"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

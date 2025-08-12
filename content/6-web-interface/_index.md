@@ -3,7 +3,7 @@ title : "Designing the Web Interface"
 date: "2025-08-12"
 weight : 6
 chapter : false
-pre : " <b> 6 </b> "
+pre : " <b> 6. </b> "
 ---
 
 > **Objective**: Build a simple, user-friendly web interface that allows users to upload images for prediction.
@@ -78,19 +78,19 @@ The web interface is designed to be simple and easy to use, focusing on the main
 
 - Navigate to the **Function** tab → select the `InvokeModelLambda` function
 
-  ![Access InvokeModelLambda](//images/6.web/web-2.png)  
+  ![Access InvokeModelLambda](/images/6.web/web-2.png)  
 
   *Figure 2: Accessing InvokeModelLambda.*
 
 - Open the Configuration tab → Trigger. Under API Endpoint, copy the full URL. The format is: `https://xxxx.execute-api.<your-region>.amazonaws.com/prod/predict`.
 
-  ![Copy API](//images/6.web/web-3.png)  
+  ![Copy API](/images/6.web/web-3.png)  
 
   *Figure 3: Copying the API endpoint.*
 
 - Go back to your project, open the `script.js` file. Press **Ctrl + F**, search for `Change predict`. and replace the URL inside the quotes **" "** with the copied API endpoint.
 
-  ![Copy API](//images/6.web/web-4.png)  
+  ![Copy API](/images/6.web/web-4.png)  
 
   *Figure 4: Replacing the API endpoint.*
 

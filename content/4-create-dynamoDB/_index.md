@@ -3,7 +3,7 @@ title : "Create DynamoDB Table: PredictionHistory"
 date: "2025-08-12"  
 weight : 4  
 chapter : false  
-pre : " <b> 4 </b> "  
+pre : " <b> 4. </b> "  
 ---  
 
 > **Objective**: Understand DynamoDB and create the `PredictionHistory` table to store image prediction history.  
@@ -51,4 +51,4 @@ DynamoDB is AWS's serverless NoSQL database service, super fast, auto-scalable, 
 Now your `PredictionHistory` table is ready to store data from Lambda functions. Next, we'll create Lambda functions to use this table!  
 
 > **Ready to go?**  
-> Move on to [Create Lambda function to save history] [Tạo Lambda function và API](/5-lambda-api-setup/)
+> Move on to [Create Lambda function and API Gateway](/5-lambda-api-setup/)

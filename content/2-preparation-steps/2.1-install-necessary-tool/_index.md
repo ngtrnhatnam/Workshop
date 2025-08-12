@@ -1,7 +1,7 @@
 ---
 title : "Install Necessary Tools"
 date: "2025-08-10" 
-weight : 2 
+weight : 2.1
 chapter : false
 pre : " <b> 2.1 </b> "
 ---
@@ -60,7 +60,7 @@ Python 3.xx.x
 ```bash
 aws --version 
 ```
-- Nếu bạn được trả kết quả có dạng bên dưới thì chúng ta đến bước tiếp theo nhé: 
+- If you get a result in the format below, then we can move on to the next step: 
 ```bash
 aws-cli/2.27.52 Python/3.13.4 Windows/11 exe/AMD64
 ```

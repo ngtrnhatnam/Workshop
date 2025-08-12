@@ -3,7 +3,7 @@ title : "Kiểm Tra Kết Quả"
 date: "2025-08-12"
 weight : 7
 chapter : false
-pre : " <b> 7 </b> "
+pre : " <b> 7. </b> "
 ---
 
 > **Mục tiêu**: Xác minh toàn bộ hệ thống (Web UI → API Gateway → Lambda → SageMaker → DynamoDB) hoạt động trơn tru.

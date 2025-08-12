@@ -1,7 +1,7 @@
 ---
 title : "Thiết lập SageMaker AI"
 date: "2025-08-11"
-weight : 3.1
+weight : 1
 chapter : false
 pre : " <b> 3.1 </b> "
 ---
@@ -52,4 +52,4 @@ pre : " <b> 3.1 </b> "
 > Với mục đích workshop này, bạn hoàn toàn có thể yên tâm sử dụng các Role mặc định do AWS tạo sẵn nhé!
 
 > **Xong chưa nè?**  
-> Tiếp theo, chúng ta sẽ [Tạo IAM Role cho SageMaker](/3-quick-create-sagemaker-AI/3.2-set-up-IAM-role-for-sagemaker/) nha!
+> Tiếp theo, chúng ta sẽ [Upload model đã huấn luyện](/3-quick-create-sagemaker-AI/3.2-upload-trained-model/) nha!

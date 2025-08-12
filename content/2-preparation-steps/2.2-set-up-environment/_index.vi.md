@@ -1,7 +1,7 @@
 ---
 title : "Chuẩn bị môi trường"
 date: "2025-08-10" 
-weight : 2
+weight : 2.2
 chapter : false
 pre : " <b> 2.2 </b> "
 ---
@@ -17,7 +17,7 @@ pre : " <b> 2.2 </b> "
 - Clone về máy:
 ```bash
 git clone https://github.com/<your-username>/Serverless-ML-Inference-with-Lambda-and-SageMaker.git
-cd <your-repo>
+cd Serverless-ML-Inference-with-Lambda-and-SageMaker
 code .
 ```
 
@@ -61,4 +61,4 @@ pip install boto3 sagemaker torch torchvision pillow
 ---
 
 > **Cũng dễ mà phải hong?**  
-> Vậy mình chuyển đến [Thiết lập Sagemake AI](/3-3-quick-create-sagemaker-AI/) để tiếp tục nha! ✨
+> Vậy mình chuyển đến [Thiết lập Sagemake AI](/3-quick-create-sagemaker-AI/) để tiếp tục nha! ✨

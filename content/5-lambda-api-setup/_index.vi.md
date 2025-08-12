@@ -3,7 +3,7 @@ title : "Giới thiệu Lambda và API Gateway"
 date: "2025-08-12"
 weight : 5
 chapter : false
-pre : " <b> 5 </b> "
+pre : " <b> 5. </b> "
 ---
 
 > **Mục tiêu**: Hiểu tổng quan về vai trò của AWS Lambda và API Gateway trong ứng dụng serverless nhận diện hình ảnh.

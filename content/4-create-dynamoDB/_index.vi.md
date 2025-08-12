@@ -3,7 +3,7 @@ title : "Tạo DynamoDB Table: PredictionHistory"
 date: "2025-08-11"  
 weight : 4  
 chapter : false  
-pre : " <b> 4 </b> "  
+pre : " <b> 4. </b> "  
 ---  
 
 > **Mục tiêu**: Hiểu về DynamoDB và tạo bảng `PredictionHistory` để lưu lịch sử dự đoán hình ảnh.  
