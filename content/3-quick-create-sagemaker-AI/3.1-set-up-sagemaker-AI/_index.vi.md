@@ -15,7 +15,7 @@ pre : " <b> 3.1 </b> "
 - Đăng nhập AWS Management Console.
 - Tìm kiếm **SageMaker AI** và mở dịch vụ.
 
-![AWS Search SageMaker](/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-1.png)  
+![AWS Search SageMaker](/Workshop/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-1.png)  
 *Hình 1: Tìm kiếm và truy cập dịch vụ SageMaker trong AWS Console.*
 
 ---
@@ -25,7 +25,7 @@ pre : " <b> 3.1 </b> "
 - Ở màn hình chính của SageMaker, tìm phần **New to SageMaker AI?**  
 - Nhấn **Set up for single user**.
 
-![SageMaker Quick Setup](/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-2.png)  
+![SageMaker Quick Setup](/Workshop/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-2.png)  
 *Hình 2: Tùy chọn Quick setup cho người dùng đơn.*
 
 ---
@@ -34,7 +34,7 @@ pre : " <b> 3.1 </b> "
 
 - AWS sẽ tự động đề xuất cấu hình và các thiết lập mặc định, bạn chỉ việc đợi load xong.
 
-![SageMaker Default Config](/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-3.png)  
+![SageMaker Default Config](/Workshop/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-3.png)  
 *Hình 3: Giao diện xác nhận cấu hình Quick setup.*
 
 ---

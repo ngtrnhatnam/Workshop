@@ -20,13 +20,13 @@ DynamoDB is AWS's serverless NoSQL database service, super fast, auto-scalable, 
 
 - Go to AWS Console → DynamoDB
 
-  ![Find DynamoDB](/images/4.create-dynamoDB/create-dynamoDB-1.png)  
+  ![Find DynamoDB](/Workshop/images/4.create-dynamoDB/create-dynamoDB-1.png)  
 
   *Figure 1: Find DynamoDB services.*
 
 - Continue select Table → Create Table to create new table
 
-  ![Create Table](/images/4.create-dynamoDB/create-dynamoDB-2.png)  
+  ![Create Table](/Workshop/images/4.create-dynamoDB/create-dynamoDB-2.png)  
 
   *Figure 2: Click Create Table to start create new table.*
 
@@ -34,13 +34,13 @@ DynamoDB is AWS's serverless NoSQL database service, super fast, auto-scalable, 
 - Partition key: `id` (Kiểu String).  
 - You can skip Sort key (not needed).  
 
-  ![Set up info](/images/4.create-dynamoDB/create-dynamoDB-3.png)  
+  ![Set up info](/Workshop/images/4.create-dynamoDB/create-dynamoDB-3.png)  
 
   *Figure 3: Set up attribute for table.*
 
 - Keep other settings default and click Create table.  
 
-  ![Create Table](/images/4.create-dynamoDB/create-dynamoDB-4.png)  
+  ![Create Table](/Workshop/images/4.create-dynamoDB/create-dynamoDB-4.png)  
 
   *Figure 4: Click Create Table to finish create table.*
 

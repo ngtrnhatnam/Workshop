@@ -17,7 +17,7 @@ pre : " <b> 3.2 </b> "
   - `inference.py` (inference script)  
   - `mobilenetv3_small.pt` (pre-trained model file)  
 
-   ![Model file](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-1.png)  
+   ![Model file](/Workshop/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-1.png)  
 
    *Figure 1: The two provided files.*
 
@@ -29,7 +29,7 @@ pre : " <b> 3.2 </b> "
   cd ../..
   ```
 
-  ![After packing](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-2.png)  
+  ![After packing](/Workshop/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-2.png)  
 
    *Figure 2: After packing the files and returning to the root folder.*
 
@@ -39,19 +39,19 @@ pre : " <b> 3.2 </b> "
 
 - Go to AWS Console → IAM → Roles.
 
-  ![AWS Search SageMaker](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-3.png)  
+  ![AWS Search SageMaker](/Workshop/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-3.png)  
 
   *Figure 3: Search and access SageMaker service in AWS Console.*
 
 - Find the auto-created SageMaker Role with name like: `AmazonSageMaker-ExecutionPolicy-xxxxxxx`.  
 
-  ![AWS Search SageMaker](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-4.png)  
+  ![AWS Search SageMaker](/Workshop/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-4.png)  
 
   *Figure 4: Search and find the SageMaker Role.*
 
 - Copy the ARN of this Role..
 
-  ![AWS Search SageMaker](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-5.png)  
+  ![AWS Search SageMaker](/Workshop/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-5.png)  
 
   *Figure 5: Copy the ARN of the SageMaker Role.*
 
@@ -62,13 +62,13 @@ pre : " <b> 3.2 </b> "
 - Update IAM Role in deploy script `src/sagemaker/deploy_model.py` in project. 
 - Press `Ctrl + F`, and search for `role = ""`.  
 
-  ![Find role location](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-6.png)  
+  ![Find role location](/Workshop/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-6.png)  
 
   *Figure 6: Find where to update the ARN.*
 
 - Replace the role value inside the quotes with the ARN you copied..
 
-  ![Change ARN](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-7.png)  
+  ![Change ARN](/Workshop/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-7.png)  
 
   *Figure 7: Replace with the ARN copied earlier.*
 
@@ -91,13 +91,13 @@ pre : " <b> 3.2 </b> "
 - Open the file located at `src/lambda/lambda_function.py` in project. 
 - Press `Ctrl + F`, and search for `EndpointName=`.  
 
-  ![Find role location](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-9.png)  
+  ![Find role location](/Workshop/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-9.png)  
 
   *Figure 9: Search for the location where the Endpoint needs to be updated.*
 
 - Replace the value inside the single quotes `' '` with the Endpoint you copied earlier.
 
-  ![Change ARN](/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-10.png)  
+  ![Change ARN](/Workshop/images/3.quick-create-sagemaker-AI/3.2.upload-trained-model/upload-trained-model-10.png)  
 
   *Figure 10: Replace the Endpoint copied in the step shown in Figure 8.*
 

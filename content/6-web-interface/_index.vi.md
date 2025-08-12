@@ -71,25 +71,25 @@ Giao diện web được thiết kế đơn giản, dễ dùng, tập trung vào
 
 - Vào AWS Console → API Gateway
 
-  ![Find API Gateway](/images/6.web/web-1.png)  
+  ![Find API Gateway](/Workshop/images/6.web/web-1.png)  
 
   *Hình 1: Tìm API Gateway tại console.*
 
 - Truy cập vào tab **Function** - chọn `InvokeModelLambda` Function
 
-  ![Access InvokeModelLambda](/images/6.web/web-2.png)  
+  ![Access InvokeModelLambda](/Workshop/images/6.web/web-2.png)  
 
   *Hình 2: Truy cập InvokeModelLambda.*
 
 - Tiếp tục vào tab **Configuration** - **Trigger**. Tại dòng **API Endpoint** sao chép toàn bộ đường dẫn. Đường dẫn có dạng `https://xxxx.execute-api.<vùng-của-bạn>.amazonaws.com/prod/predict`.
 
-  ![Copy API](/images/6.web/web-3.png)  
+  ![Copy API](/Workshop/images/6.web/web-3.png)  
 
   *Hình 3: Sao chép API Endpoint.*
 
 - Quay lại project, tại file `script.js`, các bạn nhấn **Ctrl + F**, điền `Change predict`. Các bạn thay đường dẫn bên trong cặp ngoặc kép **" "**.
 
-  ![Copy API](/images/6.web/web-4.png)  
+  ![Copy API](/Workshop/images/6.web/web-4.png)  
 
   *Hình 4: Sao chép API Endpoint.*
 

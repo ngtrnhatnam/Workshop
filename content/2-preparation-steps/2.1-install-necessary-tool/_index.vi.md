@@ -27,7 +27,7 @@ Python 3.xx.x
 ```
 > *x* là số phiên bản nha, ví dụ như Python 3.13.1 như mình là ổn rồi nè 💖
 
-![CMD check Python version](/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-1.png)
+![CMD check Python version](/Workshop/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-1.png)
 
 *Hình 1: Giao diện Console kiểm tra phiên bản Python sau khi cài.*
 
@@ -39,13 +39,13 @@ Python 3.xx.x
 - Cài đặt các extension hữu ích:
     - Python (Microsoft):
 
-        ![Extension Python](/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-2.png)
+        ![Extension Python](/Workshop/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-2.png)
 
         *Hình 2: Giao diện VS Code cài đặt extension Python.*
 
     - Live Server để chạy giao diện web local:
 
-        ![Extension Live Server](/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-3.png)
+        ![Extension Live Server](/Workshop/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-3.png)
 
         *Hình 3: Giao diện VS Code cài đặt extension Live Server.*
 
@@ -64,7 +64,7 @@ aws-cli/2.27.52 Python/3.13.4 Windows/11 exe/AMD64
 ``` 
 > *Thông số có thể khác nhau tùy phiên bản/chipset của máy, đừng lo lắng nhé 💪*
 
-![CMD check AWS CLI](/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-4.png)
+![CMD check AWS CLI](/Workshop/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-4.png)
 
 *Hình 4: Giao diện Console kiểm tra AWS CLI sau khi cài.*
 

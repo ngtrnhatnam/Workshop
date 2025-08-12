@@ -16,7 +16,7 @@ pre : " <b> 7. </b> "
 - Tìm file **main.html**.
 - Nhấn chuột phải chọn **Open with Live Server** (trong VS Code).
 
-  ![Open with live server](/images/7.check/check-1.png)
+  ![Open with live server](/Workshop/images/7.check/check-1.png)
 
   *Hình 1: Mở giao diện web qua Live Server.*
 
@@ -28,7 +28,7 @@ pre : " <b> 7. </b> "
 - Ảnh sẽ hiển thị ở khung preview ngay bên dưới.
 - Nhấn nút **Phân loại** để gửi ảnh lên hệ thống.
 
-  ![Upload image](/images/7.check/check-2.png)
+  ![Upload image](/Workshop/images/7.check/check-2.png)
 
   *Hình 2: Upload ảnh kiểm tra.*
 
@@ -40,7 +40,7 @@ pre : " <b> 7. </b> "
 - Nếu hệ thống kết nối đúng, bạn sẽ thấy thông tin như:  
   - Nhãn dự đoán (`Cat` hoặc `Dog`)  
 
-  ![Prediction result](/images/7.check/check-3.png)
+  ![Prediction result](/Workshop/images/7.check/check-3.png)
 
   *Hình 3: Kết quả dự đoán hiển thị.*
 
@@ -51,7 +51,7 @@ pre : " <b> 7. </b> "
 - Kéo xuống phần **Lịch sử đoán gần đây**.
 - Danh sách hiển thị các dự đoán gần nhất được lưu trong **DynamoDB**.
 
-  ![Prediction history](/images/7.check/check-4.png)
+  ![Prediction history](/Workshop/images/7.check/check-4.png)
 
   *Hình 4: Lịch sử dự đoán từ DynamoDB.*
 

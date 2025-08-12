@@ -29,7 +29,7 @@ Python 3.xx.x
 ```
 > *x* means the version number. For example, mine is Python 3.13.1 — totally fine! 💖
 
-![CMD check Python version](/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-1.png)
+![CMD check Python version](/Workshop/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-1.png)
 
 *Figure 1: Console showing Python version check after installation.*
 
@@ -41,13 +41,13 @@ Python 3.xx.x
 - Add these handy extensions:
     - Python (Microsoft):
 
-        ![Extension Python](/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-2.png)
+        ![Extension Python](/Workshop/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-2.png)
 
         *Figure 2: Installing the Python extension in VS Code.*
 
     - Live Server (to run your web interface locally):
 
-        ![Extension Live Server](/images/2.prerequisite/install-necessary-tool-3.png)
+        ![Extension Live Server](/Workshop/images/2.prerequisite/install-necessary-tool-3.png)
 
         *Figure 3: Installing the Live Server extension in VS Code.*
 
@@ -66,7 +66,7 @@ aws-cli/2.27.52 Python/3.13.4 Windows/11 exe/AMD64
 ```
 > *Numbers may vary depending on your OS, Python version, and chipset — no worries! 💪*
 
-![CMD check AWS CLI](/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-4.png)
+![CMD check AWS CLI](/Workshop/images/2.prerequisite/2.1.install-necessary-tool/install-necessary-tool-4.png)
 
 *Figure 4: Console showing AWS CLI version check after installation.*
 

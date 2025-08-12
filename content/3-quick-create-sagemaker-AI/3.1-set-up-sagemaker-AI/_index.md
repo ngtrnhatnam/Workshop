@@ -15,7 +15,7 @@ pre : " <b> 3.1 </b> "
 - Log in to AWS Management Console.
 - Search for **SageMaker** and open the service.
 
-![AWS Search SageMaker](/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-1.png)  
+![AWS Search SageMaker](/Workshop/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-1.png)  
 *Figure 1: Searching and accessing SageMaker service in AWS Console.*
 
 ---
@@ -25,7 +25,7 @@ pre : " <b> 3.1 </b> "
 - On the SageMaker main screen, find the section **New to SageMaker AI?**  
 - Click **Set up for single user**.
 
-![SageMaker Quick Setup](/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-2.png)  
+![SageMaker Quick Setup](/Workshop/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-2.png)  
 *Figure 2: Quick setup option for a single user.*
 
 ---
@@ -34,7 +34,7 @@ pre : " <b> 3.1 </b> "
 
 - AWS will automatically propose a configuration and default settings, you just need to wait.
 
-![SageMaker Default Config](/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-3.png)  
+![SageMaker Default Config](/Workshop/images/3.quick-create-sagemaker-AI/3.1.set-up-sagemaker-AI/set-up-sagemaker-AI-3.png)  
 *Figure 3: Quick setup configuration confirmation.*
 
 ---

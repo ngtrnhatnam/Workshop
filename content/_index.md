@@ -13,7 +13,7 @@ Welcome to **Workshop: Deploying a Real-Time Image Recognition Serverless Applic
 
 <p>Sơ đồ kiến trúc tổng hợp: </p> 
 <p align="center">
-    <img loading="lazy" src="./images/Architecture_Diagram_Serverless_ML_Inference_with_AWS_Lambda_and_SageMaker.png" alt="Project">
+    <img loading="lazy" src="./Workshop/images/Architecture_Diagram_Serverless_ML_Inference_with_AWS_Lambda_and_SageMaker.png" alt="Project">
 </p>
 
 ---

@@ -72,25 +72,25 @@ The web interface is designed to be simple and easy to use, focusing on the main
 
 - Go to AWS Console → API Gateway
 
-  ![Find API Gateway](/images/6.web/web-1.png)  
+  ![Find API Gateway](/Workshop/images/6.web/web-1.png)  
 
   *Figure 1: Search for API Gateway in the console.*
 
 - Navigate to the **Function** tab → select the `InvokeModelLambda` function
 
-  ![Access InvokeModelLambda](/images/6.web/web-2.png)  
+  ![Access InvokeModelLambda](/Workshop/images/6.web/web-2.png)  
 
   *Figure 2: Accessing InvokeModelLambda.*
 
 - Open the Configuration tab → Trigger. Under API Endpoint, copy the full URL. The format is: `https://xxxx.execute-api.<your-region>.amazonaws.com/prod/predict`.
 
-  ![Copy API](/images/6.web/web-3.png)  
+  ![Copy API](/Workshop/images/6.web/web-3.png)  
 
   *Figure 3: Copying the API endpoint.*
 
 - Go back to your project, open the `script.js` file. Press **Ctrl + F**, search for `Change predict`. and replace the URL inside the quotes **" "** with the copied API endpoint.
 
-  ![Copy API](/images/6.web/web-4.png)  
+  ![Copy API](/Workshop/images/6.web/web-4.png)  
 
   *Figure 4: Replacing the API endpoint.*
 

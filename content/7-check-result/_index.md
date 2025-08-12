@@ -16,7 +16,7 @@ pre : " <b> 7. </b> "
 - Locate the **main.html** file.
 - Right-click on it and choose **Open with Live Server** (in VS Code).
 
-  ![Open with live server](/images/7.check/check-1.png)
+  ![Open with live server](/Workshop/images/7.check/check-1.png)
 
   *Figure 1: Opening the web interface via Live Server.*
 
@@ -28,7 +28,7 @@ pre : " <b> 7. </b> "
 - The image will appear in the preview box below.
 - Click the **Classify** button to send the image to the system.
 
-  ![Upload image](/images/7.check/check-2.png)
+  ![Upload image](/Workshop/images/7.check/check-2.png)
 
   *Figure 2: Uploading an image for testing.*
 
@@ -40,7 +40,7 @@ pre : " <b> 7. </b> "
 - If the system is connected correctly, you will see information such as:  
   - Predicted label (`Cat` or `Dog`)  
 
-  ![Prediction result](/images/7.check/check-3.png)
+  ![Prediction result](/Workshop/images/7.check/check-3.png)
 
   *Figure 3: Displaying the prediction result.*
 
@@ -51,7 +51,7 @@ pre : " <b> 7. </b> "
 - Scroll down to the **Recent Prediction History** section.
 - The list shows the most recent predictions stored in **DynamoDB**.
 
-  ![Prediction history](/images/7.check/check-4.png)
+  ![Prediction history](/Workshop/images/7.check/check-4.png)
 
   *Figure 4: Prediction history from DynamoDB.*
 

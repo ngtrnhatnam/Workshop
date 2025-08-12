@@ -20,13 +20,13 @@ DynamoDB là dịch vụ cơ sở dữ liệu NoSQL serverless của AWS, rất 
 
 - Vào AWS Console → DynamoDB
 
-  ![Find DynamoDB](/images/4.create-dynamoDB/create-dynamoDB-1.png)  
+  ![Find DynamoDB](/Workshop/images/4.create-dynamoDB/create-dynamoDB-1.png)  
 
   *Hình 1: Tìm DynamoDB tại console.*
 
 - Tiếp tục chọn Table → Create Table để tạo bảng mới
 
-  ![Create Table](/images/4.create-dynamoDB/create-dynamoDB-2.png)  
+  ![Create Table](/Workshop/images/4.create-dynamoDB/create-dynamoDB-2.png)  
 
   *Hình 2: Nhấn vào Create Table để bắt đầu tạo bảng mới.*
 
@@ -34,13 +34,13 @@ DynamoDB là dịch vụ cơ sở dữ liệu NoSQL serverless của AWS, rất 
 - Thiết lập Partition key: `id` (Kiểu String).  
 - Bỏ qua phần Sort key (không cần).  
 
-  ![Set up info](/images/4.create-dynamoDB/create-dynamoDB-3.png)  
+  ![Set up info](/Workshop/images/4.create-dynamoDB/create-dynamoDB-3.png)  
 
   *Hình 3: Thiết lập các thuộc tính cho bảng mới.*
 
 - Để các thiết lập còn lại mặc định, nhấn Create table.  
 
-  ![Create Table](/images/4.create-dynamoDB/create-dynamoDB-4.png)  
+  ![Create Table](/Workshop/images/4.create-dynamoDB/create-dynamoDB-4.png)  
 
   *Hình 4: Nhấn Create Table để tạo bảng mới.*
 
