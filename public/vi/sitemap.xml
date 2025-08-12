@@ -2,236 +2,236 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/vi/1-introduce/</loc>
+    <loc>/vi/5-lambda-api-setup/5.1-create-lambda-save-history/</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/5-lambda-api-setup/5.1-create-lambda-save-history/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/5-lambda-api-setup/5.1-create-lambda-save-history/"
+                />
+  </url><url>
+    <loc>/vi/3-quick-create-sagemaker-ai/3.1-set-up-sagemaker-ai/</loc>
+    <lastmod>2025-08-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/3-quick-create-sagemaker-ai/3.1-set-up-sagemaker-ai/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/3-quick-create-sagemaker-ai/3.1-set-up-sagemaker-ai/"
+                />
+  </url><url>
+    <loc>/vi/1-introduce/</loc>
     <lastmod>2025-06-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/1-introduce/"
+                href="/1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/1-introduce/"
+                href="/vi/1-introduce/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-preparation-steps/</loc>
+    <loc>/vi/5-lambda-api-setup/5.2-create-lambda-call-sagemaker/</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/5-lambda-api-setup/5.2-create-lambda-call-sagemaker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/5-lambda-api-setup/5.2-create-lambda-call-sagemaker/"
+                />
+  </url><url>
+    <loc>/vi/3-quick-create-sagemaker-ai/3.2-upload-trained-model/</loc>
+    <lastmod>2025-08-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/3-quick-create-sagemaker-ai/3.2-upload-trained-model/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/3-quick-create-sagemaker-ai/3.2-upload-trained-model/"
+                />
+  </url><url>
+    <loc>/vi/2-preparation-steps/</loc>
     <lastmod>2025-08-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-preparation-steps/"
+                href="/2-preparation-steps/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-preparation-steps/"
+                href="/vi/2-preparation-steps/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-preparation-steps/2.1-install-necessary-tool/</loc>
+    <loc>/vi/2-preparation-steps/2.1-install-necessary-tool/</loc>
     <lastmod>2025-08-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-preparation-steps/2.1-install-necessary-tool/"
+                href="/2-preparation-steps/2.1-install-necessary-tool/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-preparation-steps/2.1-install-necessary-tool/"
+                href="/vi/2-preparation-steps/2.1-install-necessary-tool/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-preparation-steps/2.2-set-up-environment/</loc>
+    <loc>/vi/2-preparation-steps/2.2-set-up-environment/</loc>
     <lastmod>2025-08-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-preparation-steps/2.2-set-up-environment/"
+                href="/2-preparation-steps/2.2-set-up-environment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-preparation-steps/2.2-set-up-environment/"
+                href="/vi/2-preparation-steps/2.2-set-up-environment/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-quick-create-sagemaker-ai/</loc>
+    <loc>/vi/5-lambda-api-setup/5.3-create-api-gateway/</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/5-lambda-api-setup/5.3-create-api-gateway/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/5-lambda-api-setup/5.3-create-api-gateway/"
+                />
+  </url><url>
+    <loc>/vi/3-quick-create-sagemaker-ai/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-quick-create-sagemaker-ai/"
+                href="/3-quick-create-sagemaker-ai/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-quick-create-sagemaker-ai/"
+                href="/vi/3-quick-create-sagemaker-ai/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-quick-create-sagemaker-ai/3.1-set-up-sagemaker-ai/</loc>
+    <loc>/vi/4-create-dynamodb/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-quick-create-sagemaker-ai/3.1-set-up-sagemaker-ai/"
+                href="/4-create-dynamodb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-quick-create-sagemaker-ai/3.1-set-up-sagemaker-ai/"
+                href="/vi/4-create-dynamodb/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-quick-create-sagemaker-ai/3.2-upload-trained-model/</loc>
-    <lastmod>2025-08-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/3-quick-create-sagemaker-ai/3.2-upload-trained-model/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/3-quick-create-sagemaker-ai/3.2-upload-trained-model/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/4-create-dynamodb/</loc>
-    <lastmod>2025-08-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/4-create-dynamodb/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/4-create-dynamodb/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/5-lambda-api-setup/</loc>
+    <loc>/vi/5-lambda-api-setup/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-lambda-api-setup/"
+                href="/5-lambda-api-setup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-lambda-api-setup/"
+                href="/vi/5-lambda-api-setup/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-lambda-api-setup/5.3-create-api-gateway/</loc>
+    <loc>/vi/6-web-interface/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-lambda-api-setup/5.3-create-api-gateway/"
+                href="/6-web-interface/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-lambda-api-setup/5.3-create-api-gateway/"
+                href="/vi/6-web-interface/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-lambda-api-setup/5.2-create-lambda-call-sagemaker/</loc>
+    <loc>/vi/7-check-result/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-lambda-api-setup/5.2-create-lambda-call-sagemaker/"
+                href="/7-check-result/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-lambda-api-setup/5.2-create-lambda-call-sagemaker/"
+                href="/vi/7-check-result/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-lambda-api-setup/5.1-create-lambda-save-history/</loc>
+    <loc>/vi/8-cleanup/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-lambda-api-setup/5.1-create-lambda-save-history/"
+                href="/8-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-lambda-api-setup/5.1-create-lambda-save-history/"
+                href="/vi/8-cleanup/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-web-interface/</loc>
+    <loc>/vi/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-web-interface/"
+                href="/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-web-interface/"
+                href="/vi/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/8-cleanup/</loc>
-    <lastmod>1970-01-01T07:33:41+07:00</lastmod>
+    <loc>/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/8-cleanup/"
+                href="/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/8-cleanup/"
+                href="/vi/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/7-check-result/</loc>
-    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <loc>/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/7-check-result/"
+                href="/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/7-check-result/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/</loc>
-    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/categories/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/tags/"
+                href="/vi/tags/"
                 />
   </url>
 </urlset>
